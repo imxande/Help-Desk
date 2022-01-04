@@ -9,7 +9,6 @@ export const Container = styled.div`
 
 export const Icon = styled.i`
   font-size: 40px;
-  border: 1px solid red;
   color: ${(props) => props.color};
 `;
 
