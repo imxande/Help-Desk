@@ -1,8 +1,9 @@
-import Home from "./components/Home";
+import { SideMenu } from "./components/menu";
+
 function App() {
   return (
     <div className="App">
-      <Home />
+      <SideMenu />
     </div>
   );
 }
