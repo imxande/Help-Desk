@@ -1,11 +1,17 @@
 import React from "react";
-import { Container, Icon } from "./style";
+import { Container, Icon, Header } from "./style";
 import {MdDashboard} from "react-icons/md"
+import {VscDebug} from "react-icons/vsc"
 
 export const SideMenu = () => {
   return (
       <Container>
-          <Icon>
+          <Header>
+            <Icon color={ "darkgreen"}>
+                <VscDebug/>
+            </Icon>
+          </Header>
+          <Icon color={"#1479ff"}>
               <MdDashboard/>
           </Icon>
       </Container>

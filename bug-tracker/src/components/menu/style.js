@@ -10,5 +10,10 @@ export const Container = styled.div`
 export const Icon = styled.i`
   font-size: 40px;
   border: 1px solid red;
-  color: #1479ff;
+  color: ${(props) => props.color};
+`;
+
+export const Header = styled.header`
+  font-size: 45px;
+  margin: 20px 0px;
 `;
