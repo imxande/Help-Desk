@@ -1,10 +1,13 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Icon } from "./style";
+import {MdDashboard} from "react-icons/md"
 
 export const SideMenu = () => {
   return (
       <Container>
-          <h1>Is this working? </h1>
+          <Icon>
+              <MdDashboard/>
+          </Icon>
       </Container>
   );
 };
