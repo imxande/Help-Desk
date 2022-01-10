@@ -4,9 +4,9 @@ export const Container = styled.div`
   width: 4vw;
   height: 100vh;
   text-align: center;
+  background-color: lightgrey;
 `;
 export const MenuContainer = styled.div`
-  border: 1px solid red;
   height: 60%;
   display: flex;
   flex-direction: column ;
@@ -27,6 +27,7 @@ export const Header = styled.header`
 export const Footer = styled.div`
   position: absolute; 
   text-align: center;
+  align-items: center;
   bottom:20px;
 `;
 
