@@ -1,9 +1,9 @@
-import { SideMenu } from "./components/menu";
+import { Dashboard } from "./components/dashboard";
 
 function App() {
   return (
     <div className="App">
-      <SideMenu />
+      <Dashboard/>
     </div>
   );
 }
