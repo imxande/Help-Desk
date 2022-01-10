@@ -1,11 +1,11 @@
 import React from "react";
+import {Container} from "./style";
 
-const Dashboard = () => {
+export const Dashboard = () => {
   return (
-    <div>
+    <Container>
       <h1>Welcome to your Dashboard</h1>
-    </div>
+    </Container>
   );
 };
 
-export default Dashboard;
