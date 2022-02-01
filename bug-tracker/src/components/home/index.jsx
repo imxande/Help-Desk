@@ -1,7 +1,16 @@
 import React from "react";
+import {Container, Header} from "./style"
+import {SideMenu} from "../menu"
 
 const Home = () => {
-  return <div>This is the home of our application</div>;
+  return (
+    <Container>
+      <Header>
+        Welcome Username
+      </Header>
+      <SideMenu/>
+    </Container>
+  )
 };
 
 export default Home;

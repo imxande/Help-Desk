@@ -1,9 +1,9 @@
-import { Dashboard } from "./components/dashboard";
+import Home from "./components/home";
 
 function App() {
   return (
     <div className="App">
-      <Dashboard/>
+      <Home />
     </div>
   );
 }
