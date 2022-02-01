@@ -15,6 +15,7 @@ export const Ul = styled.ul`
 
 export const List = styled.li`
   display: inline;
+  margin-left: 15px;
 `;
 
 export const A = styled.a`
@@ -22,6 +23,21 @@ export const A = styled.a`
   text-decoration: none;
 
   &:hover {
-    background-color: grey;
+    background-color: lightgrey;
+  }
+  &:visited {
+    color: #000;
   }
 `;
+
+export const Span = styled.span`
+  &:hover {
+    background-color: lightgrey;
+  }
+`;
+
+export const CircularSpan = styled(Span)`
+  border-radius: 50%;
+`;
+
+export const Icon = styled.i``;

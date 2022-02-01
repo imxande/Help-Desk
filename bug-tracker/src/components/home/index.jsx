@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Header,Heading1} from "./style"
+import {Container, Header} from "./style"
 import {SideMenu} from "../menu"
 import AgentTools from "../agent_tools"
 
