@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LeftContent, RightContent } from "./style";
+import { Container, LeftContent, RightContent, UL } from "./style";
 import {AiOutlineSearch} from "react-icons/ai"
 import {WiDaySunnyOvercast} from "react-icons/wi"
 import {BiUserCircle} from "react-icons/bi"
@@ -16,7 +16,7 @@ const TopMenu = () => {
                     </ul>
                 </LeftContent>
                 <RightContent>
-                    <ul>
+                    <UL>
                         <li>
                             <button>
                                 <i>
@@ -38,7 +38,7 @@ const TopMenu = () => {
                                 </i>
                             </button>
                         </li>
-                    </ul>
+                    </UL>
                 </RightContent>
             </Container>
         </div>
