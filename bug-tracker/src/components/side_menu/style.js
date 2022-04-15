@@ -5,6 +5,7 @@ export const Container = styled.div`
   height: 100vh;
   text-align: center;
   background-color: lightgrey;
+  position: fixed;
 `;
 export const MenuContainer = styled.div`
   height: 60%;

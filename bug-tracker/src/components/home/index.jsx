@@ -1,14 +1,14 @@
 import React from "react";
 import {Container, Header} from "./style"
-import {SideMenu} from "../menu"
-import AgentTools from "../agent_tools"
+import {SideMenu} from "../side_menu"
+import TopMenu from "../top_menu"
 
 const Home = () => {
   return (
     <Container>
+      <TopMenu/>
       <Header>
           Welcome Username
-        <AgentTools/>
       </Header>
       <SideMenu/>
     </Container>
