@@ -5,11 +5,8 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  width: 1720px;
-  display: flex;
-  margin: 20px 150px;
-  position: absolute;
   font-size: 2em;
-  justify-content: space-between;
+  margin: 20px 80px;
+  position: absolute;
   // border: 1px solid purple;
 `;

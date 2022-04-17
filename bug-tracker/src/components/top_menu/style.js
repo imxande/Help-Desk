@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border: 1px solid red;
+  background: #242943;
   width: 100%;
   height: 50px;
   display: flex;
@@ -14,13 +14,28 @@ export const UL = styled.ul`
 `;
 
 export const LeftContent = styled.div`
-  border: 1px solid blue;
   display: flex;
   align-items: center;
+  margin: 20px;
 `;
 
 export const RightContent = styled.div`
-  border: 1px solid green;
   display: flex;
   align-items: center;
+  margin: 25px;
+`;
+
+export const Link = styled.a`
+  color: white;
+  font-size: 25px;
+`;
+
+export const Button = styled.button`
+  background: #242943;
+  border: none;
+  color: white;
+`;
+
+export const Icon = styled.div`
+  font-size: 25px;
 `;
