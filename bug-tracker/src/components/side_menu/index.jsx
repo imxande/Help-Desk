@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Icon, Header, Footer, MenuContainer } from "./style";
+import { Container, Icon, Footer, MenuContainer } from "./style";
 import {MdDashboard} from "react-icons/md"
-import {VscDebug} from "react-icons/vsc"
 import {GoCalendar} from "react-icons/go"
 import {CgProfile} from "react-icons/cg"
 import {FiSettings} from "react-icons/fi"
@@ -10,11 +9,6 @@ import {BsBoxArrowInRight} from "react-icons/bs"
 export const SideMenu = () => {
   return (
       <Container>
-          <Header>
-            <Icon color={ "darkgreen"}>
-                <VscDebug/>
-            </Icon>
-          </Header>
           <MenuContainer>
           <Icon color={"#1479ff"}>
               <MdDashboard/>

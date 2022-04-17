@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LeftContent, RightContent, UL } from "./style";
+import { Container, LeftContent, Link, RightContent, UL, Button, Icon } from "./style";
 import {AiOutlineSearch} from "react-icons/ai"
 import {WiDaySunnyOvercast} from "react-icons/wi"
 import {BiUserCircle} from "react-icons/bi"
@@ -11,32 +11,32 @@ const TopMenu = () => {
                 <LeftContent>
                     <ul>
                         <li>
-                            <a href="#"> Tickets</a>
+                            <Link href="#"> Tickets</Link>
                         </li>
                     </ul>
                 </LeftContent>
                 <RightContent>
                     <UL>
                         <li>
-                            <button>
-                                <i>
+                            <Button>
+                                <Icon>
                                     <AiOutlineSearch/>
-                                </i>
-                            </button>
+                                </Icon>
+                            </Button>
                         </li>
                         <li>
-                            <button>
-                                <i>
+                            <Button>
+                                <Icon>
                                     <WiDaySunnyOvercast/>
-                                </i>
-                            </button>
+                                </Icon>
+                            </Button>
                         </li>
                         <li>
-                            <button>
-                                <i>
+                            <Button>
+                                <Icon>
                                     <BiUserCircle/>
-                                </i>
-                            </button>
+                                </Icon>
+                            </Button>
                         </li>
                     </UL>
                 </RightContent>
