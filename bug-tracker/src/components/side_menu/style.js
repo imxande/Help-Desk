@@ -10,7 +10,8 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 export const MenuContainer = styled.div`
-  // border: 1px solid red;
+  border: 1px solid red;
+  top: 0px;
 `;
 export const Icon = styled.i`
   font-size: 40px;
@@ -18,5 +19,12 @@ export const Icon = styled.i`
 `;
 
 export const Button = styled.div`
-  // border: 1px solid red;
+  border: 1px solid red;
+  position: fixed;
+  bottom: 0px;
+`;
+
+export const List = styled.li`
+  border: 1px solid red;
+  margin: 50px 0px;
 `;
