@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Icon, Footer, MenuContainer } from "./style";
+import { Container, Icon, MenuContainer, Button } from "./style";
 import {MdDashboard} from "react-icons/md"
 import {GoCalendar} from "react-icons/go"
 import {CgProfile} from "react-icons/cg"
@@ -24,11 +24,11 @@ export const SideMenu = () => {
           </Icon>
           </MenuContainer>
           
-          <Footer>
+          <Button>
               <Icon>
                 <BsBoxArrowInRight/>
               </Icon>
-          </Footer>
+          </Button>
       </Container>
   );
 };
