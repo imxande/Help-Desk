@@ -1,17 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 5vh;
+  width: 5.2vh;
   height: 100vh;
-  background-color: lightgrey;
+  background-color: #dcdcdc;
   display: flex;
-  border: 1px solid red;
   position: fixed;
   flex-direction: column;
 `;
 export const MenuContainer = styled.div`
-  border: 1px solid red;
-  top: 0px;
+  // border: 1px solid red;
 `;
 export const Icon = styled.i`
   font-size: 40px;
@@ -19,12 +17,17 @@ export const Icon = styled.i`
 `;
 
 export const Button = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: fixed;
-  bottom: 0px;
+  bottom: 20px;
 `;
 
 export const List = styled.li`
-  border: 1px solid red;
+  // border: 1px solid red;
   margin: 50px 0px;
+  text-align: center;
+`;
+
+export const Text = styled.span`
+  font-size: 12px;
 `;

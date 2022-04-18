@@ -10,7 +10,10 @@ export const Container = styled.div`
 
 export const UL = styled.ul`
   display: flex;
-  text-align: center;
+`;
+
+export const List = styled.li`
+  // border: 1px solid red;
 `;
 
 export const LeftContent = styled.div`
@@ -24,6 +27,16 @@ export const RightContent = styled.div`
   align-items: center;
   margin: 25px;
 `;
+
+export const Form = styled.form`
+  color: white;
+  font-size: 20px;
+`;
+export const Label = styled.label`
+  margin-right: 10px;
+`;
+export const Select = styled.select``;
+export const Option = styled.option``;
 
 export const Link = styled.a`
   color: white;
