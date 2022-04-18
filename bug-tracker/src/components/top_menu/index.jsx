@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, LeftContent, Link, RightContent, UL, Button, Icon } from "./style";
+import { Container, LeftContent, Link, RightContent, UL, Button, Icon , Form, Label, Select, Option, List} from "./style";
 import {AiOutlineSearch} from "react-icons/ai"
 import {WiDaySunnyOvercast} from "react-icons/wi"
 import {BiUserCircle} from "react-icons/bi"
@@ -9,35 +9,47 @@ const TopMenu = () => {
         <div>
             <Container>
                 <LeftContent>
-                    <ul>
-                        <li>
+                    <UL>
+                        <List>
                             <Link href="#"> Tickets</Link>
-                        </li>
-                    </ul>
+                        </List>
+                    </UL>
                 </LeftContent>
                 <RightContent>
                     <UL>
-                        <li>
+                        <List>
+                            <Form>
+                                <Label>Departments</Label>
+                                <Select>
+                                    <Option>All</Option>
+                                    <Option>IT</Option>
+                                    <Option>QA</Option>
+                                    <Option>DevOps</Option>
+                                    <Option>Product</Option>
+                                </Select>
+                            </Form>
+                        </List>
+                        <List>
                             <Button>
                                 <Icon>
                                     <AiOutlineSearch/>
                                 </Icon>
                             </Button>
-                        </li>
-                        <li>
+                        </List>
+                        <List>
                             <Button>
                                 <Icon>
                                     <WiDaySunnyOvercast/>
                                 </Icon>
                             </Button>
-                        </li>
-                        <li>
+                        </List>
+                        <List>
                             <Button>
                                 <Icon>
                                     <BiUserCircle/>
                                 </Icon>
                             </Button>
-                        </li>
+                        </List>
                     </UL>
                 </RightContent>
             </Container>
