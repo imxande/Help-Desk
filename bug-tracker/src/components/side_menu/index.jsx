@@ -1,10 +1,9 @@
 import React from "react";
 import { Container, Icon, MenuContainer, Button, List } from "./style";
-import { MdDashboard } from "react-icons/md";
+import { MdGridView, MdOutlineRssFeed, MdViewInAr } from "react-icons/md";
 import { GoCalendar } from "react-icons/go";
-import { CgProfile } from "react-icons/cg";
-import { FiSettings } from "react-icons/fi";
-import { BsBoxArrowInRight } from "react-icons/bs";
+import { BsBoxArrowInRight, BsTags } from "react-icons/bs";
+
 
 export const SideMenu = () => {
   return (
@@ -12,23 +11,29 @@ export const SideMenu = () => {
       <MenuContainer>
         <ul>
           <List>
-            <Icon color={"#1479ff"}>
-              <MdDashboard />
+            <Icon color={"#483c32"}>
+              <MdGridView />
             </Icon>
           </List>
           <List>
-            <Icon color={"#1479ff"}>
+            <Icon color={"#483c32"}>
+              <MdOutlineRssFeed />
+            </Icon>
+          </List>
+          <List>
+            <Icon color={"#483c32"}>
+              <MdViewInAr />
+            </Icon>
+          </List>
+          <List>
+            <Icon color={"#483c32"}>
               <GoCalendar />
             </Icon>
           </List>
+          
           <List>
-            <Icon color={"#1479ff"}>
-              <CgProfile />
-            </Icon>
-          </List>
-          <List>
-            <Icon color={"#1479ff"}>
-              <FiSettings />
+            <Icon color={"#483c32"}>
+              <BsTags />
             </Icon>
           </List>
         </ul>

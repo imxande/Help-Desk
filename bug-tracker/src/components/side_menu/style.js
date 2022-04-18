@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 5vh;
   height: 100vh;
-  background-color: lightgrey;
+  background-color: #dcdcdc;
   display: flex;
   border: 1px solid red;
   position: fixed;
@@ -11,7 +11,6 @@ export const Container = styled.div`
 `;
 export const MenuContainer = styled.div`
   border: 1px solid red;
-  top: 0px;
 `;
 export const Icon = styled.i`
   font-size: 40px;
@@ -21,7 +20,7 @@ export const Icon = styled.i`
 export const Button = styled.div`
   border: 1px solid red;
   position: fixed;
-  bottom: 0px;
+  bottom: 20px;
 `;
 
 export const List = styled.li`
