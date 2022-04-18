@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, LeftContent, Link, RightContent, UL, Button, Icon , Form, Label, Select, Option, List} from "./style";
 import {AiOutlineSearch} from "react-icons/ai"
-import {WiDaySunnyOvercast} from "react-icons/wi"
 import {BiUserCircle} from "react-icons/bi"
+import {IoCreateOutline} from "react-icons/io5"
+import {IoMdNotificationsOutline} from "react-icons/io"
+import {FiSettings} from "react-icons/fi"
 
 const TopMenu = () => {
     return (
@@ -39,7 +41,21 @@ const TopMenu = () => {
                         <List>
                             <Button>
                                 <Icon>
-                                    <WiDaySunnyOvercast/>
+                                    <IoCreateOutline/>
+                                </Icon>
+                            </Button>
+                        </List>
+                        <List>
+                            <Button>
+                                <Icon>
+                                    <IoMdNotificationsOutline/>
+                                </Icon>
+                            </Button>
+                        </List>
+                        <List>
+                            <Button>
+                                <Icon>
+                                    <FiSettings/>
                                 </Icon>
                             </Button>
                         </List>
