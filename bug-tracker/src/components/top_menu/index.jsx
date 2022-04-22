@@ -1,10 +1,11 @@
 import React from "react";
-import { Container, LeftContent, Link, RightContent, UL, Button, Icon , Form, Label, Select, Option, List} from "./style";
+import { Container, LeftContent, Link, RightContent, UL, Button, Icon , List, DropDown, Text, DropIcon} from "./style";
 import {AiOutlineSearch} from "react-icons/ai"
 import {BiUserCircle} from "react-icons/bi"
 import {IoCreateOutline} from "react-icons/io5"
 import {IoMdNotificationsOutline} from "react-icons/io"
 import {FiSettings} from "react-icons/fi"
+import {RiArrowDropDownFill} from "react-icons/ri"
 
 const TopMenu = () => {
     return (
@@ -20,7 +21,17 @@ const TopMenu = () => {
                 <RightContent>
                     <UL>
                         <List>
-                            <Form>
+                            <DropDown>
+                                <Text>
+                                    {/* 👇 STATE WILL GO HERE */}
+                                    Help Desk 
+                                </Text>
+                                <DropIcon>
+                                <RiArrowDropDownFill/>
+
+                                </DropIcon>
+                            </DropDown>
+                            {/* <Form>
                                 <Label>Departments</Label>
                                 <Select>
                                     <Option>All</Option>
@@ -29,7 +40,7 @@ const TopMenu = () => {
                                     <Option>DevOps</Option>
                                     <Option>Product</Option>
                                 </Select>
-                            </Form>
+                            </Form> */}
                         </List>
                         <List>
                             <Button>

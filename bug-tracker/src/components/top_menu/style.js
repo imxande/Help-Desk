@@ -14,6 +14,11 @@ export const UL = styled.ul`
 
 export const List = styled.li`
   // border: 1px solid red;
+  margin-left: 15px;
+  
+  &:hover {
+    background: rgba(255,255,255,0.5);
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -25,18 +30,8 @@ export const LeftContent = styled.div`
 export const RightContent = styled.div`
   display: flex;
   align-items: center;
-  margin: 25px;
+  margin-right: 20px;
 `;
-
-export const Form = styled.form`
-  color: white;
-  font-size: 20px;
-`;
-export const Label = styled.label`
-  margin-right: 10px;
-`;
-export const Select = styled.select``;
-export const Option = styled.option``;
 
 export const Link = styled.a`
   color: white;
@@ -51,4 +46,25 @@ export const Button = styled.button`
 
 export const Icon = styled.div`
   font-size: 25px;
+  &:hover {
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
 `;
+
+export const DropDown = styled.div`
+  
+`
+export const Text = styled.span`
+  font-size: 25px;
+  cursor: pointer;
+  color: white
+`
+
+export const DropIcon = styled.i`
+  color: white;
+`
+
+export const DepartmentsContainer = styled.div`
+  
+`
