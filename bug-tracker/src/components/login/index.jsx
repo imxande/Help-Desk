@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Header, HeadingOne, Icon, Text } from "./style";
 import {BsFillBugFill} from "react-icons/bs"
+import LoginForm from "../login_form";
 
 const Login = () => {
     return (
@@ -12,6 +13,7 @@ const Login = () => {
                 <HeadingOne>Bug Tracker</HeadingOne>
                 <Text>Log in to Bug Tracker to continue.</Text>
             </Header>
+            <LoginForm/>
         </Container>
     )
 }

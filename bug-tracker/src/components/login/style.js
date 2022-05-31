@@ -9,7 +9,6 @@ export const Container = styled.div`
 export const Header = styled.header`
 	display:flex
 	justify-content: center;
-	border: 1px solid purple;
 
 `;
 
