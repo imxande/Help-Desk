@@ -11,7 +11,7 @@ const Login = () => {
                     <BsFillBugFill/>
                 </Icon>
                 <HeadingOne>Bug Tracker</HeadingOne>
-                <Text>Log in to Bug Tracker to continue.</Text>
+                <Text>Log in to Bug Tracker to continue</Text>
             </Header>
             <LoginForm/>
         </Container>
