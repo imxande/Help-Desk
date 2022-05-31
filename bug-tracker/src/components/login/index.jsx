@@ -1,10 +1,17 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Header, HeadingOne, Icon, Text } from "./style";
+import {BsFillBugFill} from "react-icons/bs"
 
 const Login = () => {
     return (
         <Container>
-            Hi from login
+            <Header>
+                <Icon>
+                    <BsFillBugFill/>
+                </Icon>
+                <HeadingOne>Bug Tracker</HeadingOne>
+                <Text>Log in to Bug Tracker to continue.</Text>
+            </Header>
         </Container>
     )
 }
