@@ -18,6 +18,7 @@ export const Header = styled.header`
 export const HeadingOne = styled.h1`
 	font-size: 50px;
 	text-align: center;
+	margin-top: 10px;
 `;
 
 export const Text = styled.p`
