@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Form, Label, Field, ForgotButton, ContinueButton, Text, SignUpButton, SignUpContent } from "./style";
+import {Link} from "react-router-dom";
 
 const LoginForm = () => {
     return (
@@ -25,7 +26,11 @@ const LoginForm = () => {
                     <Text>
                         Do you have an account?
                     </Text>
-                    <SignUpButton>Sign Up</SignUpButton>
+                    <SignUpButton>
+                        <Link to="/registration">
+                            Sign Up
+                        </Link>
+                    </SignUpButton>
                 </SignUpContent>
             </Form>
         </Container>
