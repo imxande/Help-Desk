@@ -1,11 +1,11 @@
 import React from "react";
+import { Container } from "./style";
 
 const Login = () => {
     return (
-        <div>
-            1- This component needs to be a login form <br/>
-            2- Once customer login successful we should redirect to the customer dashboard
-        </div>
+        <Container>
+            Hi from login
+        </Container>
     )
 }
 
