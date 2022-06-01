@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import { Container, Form, Label, Field, ButtonContainer, Button, Text, Footer, Span  } from "./style";
+import {useAxios} from "../../hooks/useAxios";
 
 const RegistrationForm = () => {
     // initial credentials 
@@ -31,9 +32,9 @@ const RegistrationForm = () => {
         // prevent default behavior (e.g reloading)
         e.preventDefault;
         // axios call will go here
+        useAxios("https://ale-bug-tracker.herokuapp.com/api/auth/register", credentials)
     }
    
-
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
@@ -44,7 +45,6 @@ const RegistrationForm = () => {
                         placeholder="Firstname"
                         value={credentials.firstName}
                         onChange={handleChange}
-
                     />
                 </Label>
                 <Label htmlFor="lastname">
@@ -54,7 +54,6 @@ const RegistrationForm = () => {
                         placeholder="Lastname"
                         value={credentials.lastName}
                         onChange={handleChange}
-
                     />
                 </Label>
                 <Label htmlFor="email">
@@ -63,8 +62,7 @@ const RegistrationForm = () => {
                         name="email"
                         placeholder="Email address"
                         value={credentials.email}
-                        onChange={handleChange}
-                        
+                        onChange={handleChange}    
                     />
                 </Label>
                 <Label htmlFor="password">
@@ -74,7 +72,6 @@ const RegistrationForm = () => {
                         placeholder="Password"
                         value={credentials.password}
                         onChange={handleChange}
-
                     />
                 </Label>
                 <ButtonContainer>
