@@ -1,19 +1,80 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import { Container, Form, Label, Field, ButtonContainer, Button, Text, Footer, Span  } from "./style";
 
 const RegistrationForm = () => {
+    // initial credentials 
+    const initialCredentials = {
+        firstName: "", 
+        lastName:"",
+        email: "",
+        password: "",
+     }
+
+    // credentials will hold our registration form state
+    const [credentials, setCredentials] = useState(initialCredentials);
+    
+    // on change handler function
+    const handleChange = (e) => {
+        // grab name and value from our target property in the event object
+        const {name, value} = e.target;
+        // update our credentials state
+        setCredentials({
+            // every time our handle change fires we will create a copy of the credentials state
+            ...credentials, 
+            // update the name and value properties in out target property in our event object
+            [name]: value
+        })
+    }   
+
+    const handleSubmit = (e) => {
+        // prevent default behavior (e.g reloading)
+        e.preventDefault;
+        // axios call will go here
+    }
+   
+
     return (
         <Container>
-            <Form>
+            <Form onSubmit={handleSubmit}>
+            <Label htmlFor="firstname">
+                    <Field
+                        type="text"
+                        name="firstName"
+                        placeholder="Firstname"
+                        value={credentials.firstName}
+                        onChange={handleChange}
+
+                    />
+                </Label>
+                <Label htmlFor="lastname">
+                    <Field
+                        type="text"
+                        name="lastName"
+                        placeholder="Lastname"
+                        value={credentials.lastName}
+                        onChange={handleChange}
+
+                    />
+                </Label>
                 <Label htmlFor="email">
                     <Field
+                        type="email"
+                        name="email"
                         placeholder="Email address"
+                        value={credentials.email}
+                        onChange={handleChange}
+                        
                     />
                 </Label>
                 <Label htmlFor="password">
                     <Field
+                        type="password"
+                        name="password"
                         placeholder="Password"
+                        value={credentials.password}
+                        onChange={handleChange}
+
                     />
                 </Label>
                 <ButtonContainer>
