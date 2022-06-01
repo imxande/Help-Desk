@@ -6,16 +6,19 @@ export const RegistrationPage = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: #fafafa;
 `;
 
 export const Container = styled.div`
 	width: 500px;
-	height: 700px;
-	border: 1px solid red;
+	height: 600px;
+	background: #ffff;
+	border-radius: 25px;
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+		rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 `;
 
 export const Header = styled.header`
-	border: 1px solid red;
 	text-align: center;
 	padding: 40px 40px 24px;
 `;
