@@ -5,7 +5,8 @@ export const Container = styled.div`
 	height: 700px;
 	background-color: #fff;
 	border-radius: 5%;
-	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+		rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 `;
 
 export const Header = styled.header`
