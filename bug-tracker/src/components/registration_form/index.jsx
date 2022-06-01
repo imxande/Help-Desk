@@ -10,6 +10,7 @@ const RegistrationForm = () => {
         lastName:"",
         email: "",
         password: "",
+        role:""
      }
 
     // credentials will hold our registration form state
@@ -30,9 +31,18 @@ const RegistrationForm = () => {
 
     const handleSubmit = (e) => {
         // prevent default behavior (e.g reloading)
-        e.preventDefault;
+        e.preventDefault();
+
+        // creates a new user
+        const newUser = {
+            firstName: credentials.firstName, 
+            lastName: credentials.lastName,
+            email: credentials.email,
+            password: credentials.password,
+            role: "user"
+        }
         // axios call will go here
-        useAxios("https://ale-bug-tracker.herokuapp.com/api/auth/register", credentials)
+        useAxios("https://ale-bug-tracker.herokuapp.com/api/auth/register", newUser)
     }
    
     return (

@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const useAxios = (url, state) => {
+export const useAxios = (url, user) => {
 	axios
-		.post(url, state)
-		.then((user) => {
-			console.log("Response:", user);
+		.post(url, user)
+		.then((customer) => {
+			console.log(customer);
 		})
 		.catch((error) => console.log(error));
 };
