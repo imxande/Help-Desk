@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { Container, Form, Label, Field, ButtonContainer, Button, Text, Footer, Span  } from "./style";
 import {useAxios} from "../../hooks/useAxios";
 
@@ -12,6 +12,9 @@ const RegistrationForm = () => {
         password: "",
         role:""
      }
+
+    //  we will use navigate hook to redirect to login page after registration
+    const history = useNavigate();
 
     // credentials will hold our registration form state
     const [credentials, setCredentials] = useState(initialCredentials);
@@ -43,6 +46,9 @@ const RegistrationForm = () => {
         }
         // axios call will go here
         useAxios("https://ale-bug-tracker.herokuapp.com/api/auth/register", newUser)
+
+        // redirect to login page
+        history("/")
     }
    
     return (
@@ -99,8 +105,6 @@ const RegistrationForm = () => {
                         </Span>
                     </Link>
                 </Footer>
-                    
-                
             </Form>
         </Container>
     )
