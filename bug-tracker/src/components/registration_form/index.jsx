@@ -91,7 +91,7 @@ const RegistrationForm = () => {
                     />
                 </Label>
                 <ButtonContainer>
-                    <Button>
+                    <Button disabled={!credentials.firstName || !credentials.lastName || !credentials.email || !credentials.password}>
                         Continue
                     </Button>
                 </ButtonContainer>
