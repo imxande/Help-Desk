@@ -48,7 +48,7 @@ const LoginForm = () => {
                 localStorage.setItem("token", token);
 
                 // and redirect to the users dashboard
-				history("/dashboard")
+				history("/home")
 			})
 			.catch((error) => error);
 	};
