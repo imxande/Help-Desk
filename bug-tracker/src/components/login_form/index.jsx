@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
 	Container,
 	Form,
@@ -12,8 +12,12 @@ import {
 } from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { CustomerContext } from "../../context/CustomerContext";
 
 const LoginForm = () => {
+	// we will use our context to store the response data globally
+	const {setUser} = useContext(CustomerContext);
+
 	// our form state
 	const [authentication, setAuthentication] = useState({
 		email: "",
@@ -41,14 +45,19 @@ const LoginForm = () => {
 		axios
 			.post("https://ale-bug-tracker.herokuapp.com/api/auth/customers/login", authentication)
 			.then((response) => {
-				console.log(response.data);
+				// store data from response
+				const {data} = response
+
+				// store data in the context 
+				setUser(data);
+
                 // grab token
                 const {token} = response.data;
                 // store token 
                 localStorage.setItem("token", token);
 
                 // and redirect to the users dashboard
-				history("/dashboard")
+				history("/home")
 			})
 			.catch((error) => error);
 	};
