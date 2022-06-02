@@ -10,7 +10,7 @@ import {
 	SignUpButton,
 	SignUpContent,
 } from "./style";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoginForm = () => {
@@ -19,6 +19,9 @@ const LoginForm = () => {
 		email: "",
 		password: "",
 	});
+
+	// we will use this navigation hook to redirect to dashboard once user successfully logs in
+	const history = useNavigate();
 
 	// handle the changes in the form
     const handleChange = (e) => {
@@ -45,6 +48,7 @@ const LoginForm = () => {
                 localStorage.setItem("token", token);
 
                 // and redirect to the users dashboard
+				history("/dashboard")
 			})
 			.catch((error) => error);
 	};
