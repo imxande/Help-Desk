@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { Container, Form, Label, Field, ButtonContainer, Button, Text, Footer, Span  } from "./style";
-import {useAxios} from "../../hooks/useAxios";
+import axios from "axios";
 
 const RegistrationForm = () => {
     // initial credentials 
@@ -38,17 +38,18 @@ const RegistrationForm = () => {
 
         // creates a new user
         const newUser = {
-            firstName: credentials.firstName, 
-            lastName: credentials.lastName,
-            email: credentials.email,
-            password: credentials.password,
+            ...credentials,
             role: "user"
         }
-        // axios call will go here
-        useAxios("https://ale-bug-tracker.herokuapp.com/api/auth/register", newUser)
 
-        // redirect to login page
-        history("/")
+        // axios call will go here
+        axios.post("https://ale-bug-tracker.herokuapp.com/api/auth/register", newUser)
+        .then(response => {
+            console.log(response.data)
+            // redirect to login page
+            history("/")
+        })
+        .catch(error => error)
     }
    
     return (
