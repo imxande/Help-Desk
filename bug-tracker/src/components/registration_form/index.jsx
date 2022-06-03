@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import { Container, Form, Label, Field, ButtonContainer, Button, Text, Footer, Span  } from "./style";
 import axios from "axios";
+import { CustomerContext } from "../../context/CustomerContext";
 
 const RegistrationForm = () => {
     // initial credentials 
@@ -12,6 +13,9 @@ const RegistrationForm = () => {
         password: "",
         role:""
      }
+    
+    //  let's bring our setUser function from our context api to add some user information from the form
+     const {setCustomerInfo} = useContext(CustomerContext); 
 
     //  we will use navigate hook to redirect to login page after registration
     const history = useNavigate();
@@ -45,7 +49,8 @@ const RegistrationForm = () => {
         // axios call will go here
         axios.post("https://ale-bug-tracker.herokuapp.com/api/auth/register", newUser)
         .then(response => {
-            console.log(response.data)
+            // add data to our context
+            setCustomerInfo(response.data)
             // redirect to login page
             history("/")
         })
