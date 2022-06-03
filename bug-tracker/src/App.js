@@ -8,10 +8,11 @@ import { CustomerContext } from "./context/CustomerContext";
 
 function App() {
 	const [user, setUser] = useState({});
+	const [customerInfo, setCustomerInfo] = useState({});
 
 	return (
 		<div className="App">
-			<CustomerContext.Provider value={{ user, setUser }}>
+			<CustomerContext.Provider value={{ user, setUser, customerInfo, setCustomerInfo }}>
 				<Routes>
 					<Route path="/" element={<Login />} />
 					<Route path="/registration" element={<Registration />} />

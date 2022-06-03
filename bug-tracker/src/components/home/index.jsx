@@ -6,8 +6,8 @@ import { CustomerContext } from "../../context/CustomerContext";
 
 
 const Home = () => {
-  const {user} = useContext(CustomerContext);
-
+  const {user, customerInfo} = useContext(CustomerContext);
+  console.log(customerInfo)
   return (
     <Container>
       <TopMenu/>
