@@ -1,8 +1,12 @@
 import React from "react";
+import TicketForm from "../ticket_form";
+import {Container} from "./style"
 
 const Ticket = () => {
-    return(
-        <div>Create ticket wired!</div>
+    return (
+        <Container>
+            <TicketForm />
+        </Container>
     )
 }
 
