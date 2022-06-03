@@ -4,6 +4,7 @@ import Login from "./components/login";
 import Registration from "./components/registration";
 import PrivateRoute from "./components/private_route";
 import Home from "./components/home";
+import Ticket from "./components/ticket";
 import { CustomerContext } from "./context/CustomerContext";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Login />} />
 					<Route path="/registration" element={<Registration />} />
+					<Route path="/ticket" element={<Ticket />} />
 					<Route
 						path="/home"
 						element={
