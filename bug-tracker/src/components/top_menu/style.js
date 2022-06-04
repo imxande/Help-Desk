@@ -52,7 +52,6 @@ export const Button = styled.button`
 		margin-top: 10px;
 		border-radius: 10%;
 		white-space: nowrap;
-		border: 1px solid red;
 	}
 `;
 
