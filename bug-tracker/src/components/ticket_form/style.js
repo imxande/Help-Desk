@@ -38,7 +38,7 @@ export const RightContent = styled.div`
 `;
 
 export const Label = styled.label``;
-export const Select = styled.select``;
+export const DataList = styled.datalist``;
 export const Option = styled.option``;
 export const Field = styled.input`
 	font-size: 14px;

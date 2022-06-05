@@ -10,8 +10,8 @@ import {
 	LeftContent,
 	RightContent,
 	Description,
-	// Select,
-	// Option,
+	DataList,
+	Option,
 	Field,
 	TextArea,
 	ButtonContainer,
@@ -20,6 +20,10 @@ import {
 } from "./style";
 
 const TicketForm = () => {
+	const disable = (e) => {
+		e.preventDefault();
+		return false;
+	};
 	return (
 		<Container>
 			<Form>
@@ -33,13 +37,13 @@ const TicketForm = () => {
 					<Label htmlFor="status">
 						<RightContent>
 							Status
-							<Field />
-							{/* <Select>
-									<Option>Open</Option>
-									<Option>In Process</Option>
-									<Option>On Hold</Option>
-									<Option>Closed</Option>
-								</Select> */}
+							<Field onKeyDown={disable} type="text" list="statusList" />
+							<DataList id="statusList">
+								<Option>Open</Option>
+								<Option>In Process</Option>
+								<Option>On Hold</Option>
+								<Option>Closed</Option>
+							</DataList>
 						</RightContent>
 					</Label>
 				</TopContent>
@@ -53,7 +57,7 @@ const TicketForm = () => {
 					<Label htmlFor="date">
 						<RightContent>
 							Date
-							<Field placeholder="MM/dd/yyyy hh:mm --" />
+							<Field onKeyDown={disable} placeholder="MM/dd/yyyy hh:mm --" />
 						</RightContent>
 					</Label>
 				</MiddleContent>
@@ -67,7 +71,13 @@ const TicketForm = () => {
 					<Label htmlFor="priority">
 						<RightContent>
 							Priority
-							<Field />
+							<Field type="text" list="priorityList" placeholder="-None-" onKeyDown={disable} />
+							<DataList id="priorityList">
+								<Option>-None-</Option>
+								<Option>High</Option>
+								<Option>Medium</Option>
+								<Option>Low</Option>
+							</DataList>
 						</RightContent>
 					</Label>
 				</BottomContent>
