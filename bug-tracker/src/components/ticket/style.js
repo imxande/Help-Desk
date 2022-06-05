@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	border: 1px solid red;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -16,10 +15,16 @@ export const Header = styled.header`
 	margin: 20px;
 `;
 
-export const Icon = styled.i``;
+export const Icon = styled.i`
+	color: purple;
+`;
 
 export const HeadingOne = styled.h1`
 	margin: 0 20px;
 `;
 
-export const FormContainer = styled.div``;
+export const FormContainer = styled.div`
+	border: 1px solid red;
+	display: flex;
+	justify-content: center;
+`;
