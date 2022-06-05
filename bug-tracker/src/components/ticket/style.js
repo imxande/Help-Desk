@@ -30,7 +30,6 @@ export const HeadingTwo = styled.h2`
 `;
 
 export const FormContainer = styled.div`
-	border: 1px solid red;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
