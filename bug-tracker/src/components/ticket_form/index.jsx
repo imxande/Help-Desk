@@ -1,12 +1,44 @@
 import React from "react";
-import { Container, Form, Field } from "./style";
+import { Container, Form, Label, Select, Option, Field, SubmitButton, CancelButton } from "./style";
 
 const TicketForm = () => {
 	return (
 		<Container>
 			<Form>
-				<Field>subject</Field>
-				<Field>body</Field>
+				<Label>
+					<Field placeholder="Contact Name" />
+				</Label>
+				<Label htmlFor="status">
+					<Select>
+						<Option>Open</Option>
+						<Option>In Process</Option>
+						<Option>On Hold</Option>
+						<Option>Closed</Option>
+					</Select>
+				</Label>
+				<Label htmlFor="subject">
+					<Field placeholder="subject" />
+				</Label>
+
+				<Label>
+					<Field placeholder="MM/dd/yyyy hh:mm" />
+				</Label>
+				<Label>
+					<Field placeholder="Ticket Owner" />
+				</Label>
+				<Label>
+					<Select>
+						<Option>-None-</Option>
+						<Option>High</Option>
+						<Option>Medium</Option>
+						<Option>Low</Option>
+					</Select>
+				</Label>
+				<Label htmlFor="body">
+					<Field placeholder="description" />
+				</Label>
+				<SubmitButton />
+				<CancelButton />
 			</Form>
 		</Container>
 	);

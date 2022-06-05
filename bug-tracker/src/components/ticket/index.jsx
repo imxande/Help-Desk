@@ -8,6 +8,7 @@ import {
 	Icon,
 	HeadingOne,
 	FormContainer,
+	HeadingTwo,
 } from "../ticket/style";
 
 const Ticket = () => {
@@ -22,6 +23,7 @@ const Ticket = () => {
 				</Header>
 			</HeaderContainer>
 			<FormContainer>
+				<HeadingTwo>Ticket Information</HeadingTwo>
 				<TicketForm />
 			</FormContainer>
 		</Container>
