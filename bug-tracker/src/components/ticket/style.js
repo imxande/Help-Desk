@@ -23,8 +23,13 @@ export const HeadingOne = styled.h1`
 	margin: 0 20px;
 `;
 
+export const HeadingTwo = styled.h2`
+	margin: 15px;
+`;
+
 export const FormContainer = styled.div`
 	border: 1px solid red;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 `;
