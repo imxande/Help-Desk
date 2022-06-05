@@ -1,14 +1,19 @@
 import React from "react";
 import {
 	Container,
+	Form,
 	TopContent,
 	MiddleContent,
 	BottomContent,
-	Form,
+	Body,
 	Label,
-	Select,
-	Option,
+	LeftContent,
+	RightContent,
+	Description,
+	// Select,
+	// Option,
 	Field,
+	TextArea,
 	ButtonContainer,
 	SubmitButton,
 	CancelButton,
@@ -19,49 +24,61 @@ const TicketForm = () => {
 		<Container>
 			<Form>
 				<TopContent>
-					<Label>
-						Contact Name
-						<Field />
+					<Label htmlFor="name">
+						<LeftContent>
+							Contact Name
+							<Field />
+						</LeftContent>
 					</Label>
 					<Label htmlFor="status">
-						Status
-						<Select>
-							<Option>Open</Option>
-							<Option>In Process</Option>
-							<Option>On Hold</Option>
-							<Option>Closed</Option>
-						</Select>
+						<RightContent>
+							Status
+							<Field />
+							{/* <Select>
+									<Option>Open</Option>
+									<Option>In Process</Option>
+									<Option>On Hold</Option>
+									<Option>Closed</Option>
+								</Select> */}
+						</RightContent>
 					</Label>
 				</TopContent>
 				<MiddleContent>
 					<Label htmlFor="subject">
-						Subject
-						<Field />
+						<LeftContent>
+							Subject
+							<Field />
+						</LeftContent>
 					</Label>
-					<Label>
-						Date
-						<Field placeholder="MM/dd/yyyy hh:mm --" />
+					<Label htmlFor="date">
+						<RightContent>
+							Date
+							<Field placeholder="MM/dd/yyyy hh:mm --" />
+						</RightContent>
 					</Label>
 				</MiddleContent>
 				<BottomContent>
-					<Label>
-						Ticket Owner
-						<Field />
+					<Label htmlFor="owner">
+						<LeftContent>
+							Ticket Owner
+							<Field />
+						</LeftContent>
 					</Label>
-					<Label>
-						Priority
-						<Select>
-							<Option>-None-</Option>
-							<Option>High</Option>
-							<Option>Medium</Option>
-							<Option>Low</Option>
-						</Select>
-					</Label>
-					<Label htmlFor="body">
-						Description
-						<Field />
+					<Label htmlFor="priority">
+						<RightContent>
+							Priority
+							<Field />
+						</RightContent>
 					</Label>
 				</BottomContent>
+				<Body>
+					<Label htmlFor="body">
+						<Description>
+							Description
+							<TextArea />
+						</Description>
+					</Label>
+				</Body>
 				<ButtonContainer>
 					<SubmitButton />
 					<CancelButton />
