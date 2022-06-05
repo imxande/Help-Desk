@@ -20,9 +20,11 @@ const TicketForm = () => {
 			<Form>
 				<TopContent>
 					<Label>
-						<Field placeholder="Contact Name" />
+						Contact Name
+						<Field />
 					</Label>
 					<Label htmlFor="status">
+						Status
 						<Select>
 							<Option>Open</Option>
 							<Option>In Process</Option>
@@ -33,18 +35,21 @@ const TicketForm = () => {
 				</TopContent>
 				<MiddleContent>
 					<Label htmlFor="subject">
-						<Field placeholder="subject" />
+						Subject
+						<Field />
 					</Label>
-
 					<Label>
-						<Field placeholder="MM/dd/yyyy hh:mm" />
+						Date
+						<Field placeholder="MM/dd/yyyy hh:mm --" />
 					</Label>
 				</MiddleContent>
 				<BottomContent>
 					<Label>
-						<Field placeholder="Ticket Owner" />
+						Ticket Owner
+						<Field />
 					</Label>
 					<Label>
+						Priority
 						<Select>
 							<Option>-None-</Option>
 							<Option>High</Option>
@@ -53,10 +58,10 @@ const TicketForm = () => {
 						</Select>
 					</Label>
 					<Label htmlFor="body">
-						<Field placeholder="description" />
+						Description
+						<Field />
 					</Label>
 				</BottomContent>
-
 				<ButtonContainer>
 					<SubmitButton />
 					<CancelButton />

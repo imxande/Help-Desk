@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div``;
-export const TopContent = styled.div``;
+export const TopContent = styled.div`
+	border: 1px solid red;
+	margin: 20px;
+`;
 export const MiddleContent = styled.div``;
 export const BottomContent = styled.div``;
 export const Form = styled.form`
@@ -16,6 +19,8 @@ export const Field = styled.input`
 	border: none;
 	outline: none;
 	border-bottom: 1px solid #000;
+	margin: 20px;
+	width: 250px;
 `;
 
 export const ButtonContainer = styled.div``;
