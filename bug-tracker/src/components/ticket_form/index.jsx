@@ -5,6 +5,9 @@ const TicketForm = () => {
 	return (
 		<Container>
 			<Form>
+				<Label>
+					<Field placeholder="Contact Name" />
+				</Label>
 				<Label htmlFor="status">
 					<Select>
 						<Option>Open</Option>
@@ -16,11 +19,23 @@ const TicketForm = () => {
 				<Label htmlFor="subject">
 					<Field placeholder="subject" />
 				</Label>
-				<Label htmlFor="body">
-					<Field placeholder="description" />
-				</Label>
+
 				<Label>
 					<Field placeholder="MM/dd/yyyy hh:mm" />
+				</Label>
+				<Label>
+					<Field placeholder="Ticket Owner" />
+				</Label>
+				<Label>
+					<Select>
+						<Option>-None-</Option>
+						<Option>High</Option>
+						<Option>Medium</Option>
+						<Option>Low</Option>
+					</Select>
+				</Label>
+				<Label htmlFor="body">
+					<Field placeholder="description" />
 				</Label>
 				<SubmitButton />
 				<CancelButton />

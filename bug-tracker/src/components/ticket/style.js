@@ -5,6 +5,7 @@ export const Container = styled.div`
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	background: #f5f5f5;
 `;
 
 export const HeaderContainer = styled.div``;
@@ -25,11 +26,14 @@ export const HeadingOne = styled.h1`
 
 export const HeadingTwo = styled.h2`
 	margin: 15px;
+	font-size: 40px;
 `;
 
 export const FormContainer = styled.div`
 	border: 1px solid red;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
+	text-align: center;
+	margin: 20px 400px;
+	background: #ffffff;
 `;
