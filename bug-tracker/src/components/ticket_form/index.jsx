@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
 	Container,
 	Form,
@@ -20,10 +21,22 @@ import {
 } from "./style";
 
 const TicketForm = () => {
+	// we will have useNavigate hook redirect our page
+	const history = useNavigate();
+
+	// we will add a disable functionality to some of our input fields containing data list
 	const disable = (e) => {
 		e.preventDefault();
 		return false;
 	};
+
+	// handle cancel
+	const handleCancel = (e) => {
+		e.preventDefault();
+		// in case user cancels the form redirect to home page
+		history("/home");
+	};
+
 	return (
 		<Container>
 			<Form>
@@ -91,7 +104,7 @@ const TicketForm = () => {
 				</Body>
 				<ButtonContainer>
 					<SubmitButton>Submit</SubmitButton>
-					<CancelButton>Cancel</CancelButton>
+					<CancelButton onClick={handleCancel}>Cancel</CancelButton>
 				</ButtonContainer>
 			</Form>
 		</Container>
