@@ -17,16 +17,18 @@ export const Header = styled.header`
 `;
 
 export const Icon = styled.i`
-	color: purple;
+	color: #34c7d5;
 `;
 
 export const HeadingOne = styled.h1`
 	margin: 0 20px;
+	color: #34c7d5;
 `;
 
 export const HeadingTwo = styled.h2`
-	margin: 15px;
+	margin: 20px auto 50px;
 	font-size: 40px;
+	color: #34c7d5;
 `;
 
 export const FormContainer = styled.div`
