@@ -63,5 +63,19 @@ export const Field = styled.input`
 `;
 
 export const ButtonContainer = styled.div``;
-export const SubmitButton = styled.button``;
-export const CancelButton = styled.button``;
+export const SubmitButton = styled.button`
+	width: 100px;
+	cursor: pointer;
+	margin: 20px;
+	color: #ffff;
+	background: #34c7d5;
+	border-radius: 10px;
+	font-size: 20px;
+`;
+export const CancelButton = styled.button`
+	width: 100px;
+	margin: 20px;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 20px;
+`;

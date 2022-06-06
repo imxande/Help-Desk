@@ -90,8 +90,8 @@ const TicketForm = () => {
 					</Label>
 				</Body>
 				<ButtonContainer>
-					<SubmitButton />
-					<CancelButton />
+					<SubmitButton>Submit</SubmitButton>
+					<CancelButton>Cancel</CancelButton>
 				</ButtonContainer>
 			</Form>
 		</Container>
