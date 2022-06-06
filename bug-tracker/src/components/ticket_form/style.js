@@ -2,20 +2,24 @@ import styled from "styled-components";
 
 export const Container = styled.div``;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+	font-size: 20px;
+`;
 
 export const TopContent = styled.div`
 	display: flex;
 	justify-content: center;
-	// margin: 20px;
+	margin-bottom: 40px;
 `;
 export const MiddleContent = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-bottom: 40px;
 `;
 export const BottomContent = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-bottom: 20px;
 `;
 
 export const Body = styled.div`
@@ -23,9 +27,18 @@ export const Body = styled.div`
 	justify-content: center;
 `;
 
+export const TextArea = styled.textarea`
+	margin-top: 15px;
+	width: 500px;
+	height: 200px;
+	font-size: 16px;
+	line-height: 1.5;
+`;
+
 export const Description = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 20px;
 `;
 
 export const LeftContent = styled.div`
@@ -48,8 +61,6 @@ export const Field = styled.input`
 	margin: 20px;
 	width: 250px;
 `;
-
-export const TextArea = styled.textarea``;
 
 export const ButtonContainer = styled.div``;
 export const SubmitButton = styled.button``;
