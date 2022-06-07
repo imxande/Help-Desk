@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
 	Container,
 	Form,
@@ -21,10 +22,22 @@ import {
 } from "./style";
 
 const TicketForm = () => {
+	// navigation
+	const history = useNavigate();
+
+	// handles on key down
 	const disable = (e) => {
 		e.preventDefault();
 		return false;
 	};
+
+	// handles cancel
+	const handleCancel = (e) => {
+		e.preventDefault();
+		// redirect to home
+		return history("/home");
+	};
+
 	return (
 		<Container>
 			<Form>
@@ -94,7 +107,7 @@ const TicketForm = () => {
 					<SubmitButton>
 						<Span color="#ffff">Submit</Span>
 					</SubmitButton>
-					<CancelButton>
+					<CancelButton onClick={handleCancel}>
 						<Span color="5a616f">Cancel</Span>
 					</CancelButton>
 				</ButtonContainer>
