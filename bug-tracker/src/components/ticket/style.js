@@ -8,12 +8,14 @@ export const Container = styled.div`
 	background: #f5f5f5;
 `;
 
-export const HeaderContainer = styled.div``;
+export const HeaderContainer = styled.div`
+	width: 100%;
+`;
 
 export const Header = styled.header`
 	font-size: 50px;
 	display: flex;
-	margin: 20px;
+	margin: 15px;
 `;
 
 export const Icon = styled.i`
@@ -35,6 +37,9 @@ export const FormContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	margin: 20px 400px;
+	margin: 5px 500px;
 	background: #ffffff;
+	border: 1px solid #7ad8e1;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+	width: 750px;
 `;

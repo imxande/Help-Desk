@@ -17,6 +17,7 @@ import {
 	ButtonContainer,
 	SubmitButton,
 	CancelButton,
+	Span,
 } from "./style";
 
 const TicketForm = () => {
@@ -90,8 +91,12 @@ const TicketForm = () => {
 					</Label>
 				</Body>
 				<ButtonContainer>
-					<SubmitButton />
-					<CancelButton />
+					<SubmitButton>
+						<Span color="#ffff">Submit</Span>
+					</SubmitButton>
+					<CancelButton>
+						<Span color="5a616f">Cancel</Span>
+					</CancelButton>
 				</ButtonContainer>
 			</Form>
 		</Container>
