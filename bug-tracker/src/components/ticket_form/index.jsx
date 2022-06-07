@@ -24,8 +24,9 @@ import {
 } from "./style";
 
 const TicketForm = () => {
-	const now = getDate();
-	console.log(now);
+	// find date time
+	const { currentMonth, day, year } = getDate();
+
 	// lets grab some user info to auto populate some of the fields in the form
 	const { name } = getUser();
 
@@ -87,7 +88,7 @@ const TicketForm = () => {
 							Date
 							<Field
 								onKeyDown={disable}
-								placeholder="MM/dd/yyyy hh:mm --"
+								placeholder={`${currentMonth} ${day}, ${year} `}
 								caretColor="transparent"
 								cursor="default"
 							/>
