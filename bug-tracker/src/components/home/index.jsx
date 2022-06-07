@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Container, Header } from "./style";
 import { SideMenu } from "../side_menu";
 import TopMenu from "../top_menu";
-import { decodeToken } from "react-jwt";
+import { getUser } from "../../helpers/getUser";
 import { CustomerContext } from "../../context/CustomerContext";
 
 const Home = () => {
@@ -11,18 +11,15 @@ const Home = () => {
 	// state
 	const [authenticatedUser, setAuthenticatedUser] = useState({});
 
-	// grab token from local storage
-	const token = localStorage.getItem("token");
-
-	// grab payload
-	const payload = decodeToken(token);
+	// get user information
+	const userInfo = getUser();
 
 	useEffect(() => {
-		console.log(payload);
+		console.log(userInfo);
 		// update state
-		setAuthenticatedUser(payload);
+		setAuthenticatedUser(userInfo);
 		// update context
-		setUser(payload);
+		setUser(userInfo);
 	}, []);
 
 	return (

@@ -1,4 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { getUser } from "../../helpers/getUser";
+import { getDate } from "../../helpers/getDate";
 import {
 	Container,
 	Form,
@@ -17,13 +20,32 @@ import {
 	ButtonContainer,
 	SubmitButton,
 	CancelButton,
+	Span,
 } from "./style";
 
 const TicketForm = () => {
+	// find date time
+	const { currentMonth, day, year } = getDate();
+
+	// lets grab some user info to auto populate some of the fields in the form
+	const { name } = getUser();
+
+	// navigation
+	const history = useNavigate();
+
+	// handles on key down
 	const disable = (e) => {
 		e.preventDefault();
 		return false;
 	};
+
+	// handles cancel
+	const handleCancel = (e) => {
+		e.preventDefault();
+		// redirect to home
+		return history("/home");
+	};
+
 	return (
 		<Container>
 			<Form>
@@ -37,7 +59,14 @@ const TicketForm = () => {
 					<Label htmlFor="status">
 						<RightContent>
 							Status
-							<Field onKeyDown={disable} type="text" list="statusList" />
+							<Field
+								onKeyDown={disable}
+								type="text"
+								list="statusList"
+								caretColor="transparent"
+								cursor="pointer"
+								placeholder="New"
+							/>
 							<DataList id="statusList">
 								<Option>Open</Option>
 								<Option>In Process</Option>
@@ -57,7 +86,12 @@ const TicketForm = () => {
 					<Label htmlFor="date">
 						<RightContent>
 							Date
-							<Field onKeyDown={disable} placeholder="MM/dd/yyyy hh:mm --" />
+							<Field
+								onKeyDown={disable}
+								placeholder={`${currentMonth} ${day}, ${year} `}
+								caretColor="transparent"
+								cursor="default"
+							/>
 						</RightContent>
 					</Label>
 				</MiddleContent>
@@ -65,13 +99,26 @@ const TicketForm = () => {
 					<Label htmlFor="owner">
 						<LeftContent>
 							Ticket Owner
-							<Field />
+							<Field
+								placeholder={`${name}`}
+								onKeyDown={disable}
+								caretColor="transparent"
+								cursor="default"
+							/>
 						</LeftContent>
 					</Label>
 					<Label htmlFor="priority">
 						<RightContent>
 							Priority
-							<Field type="text" list="priorityList" placeholder="-None-" onKeyDown={disable} />
+							<Field
+								type="text"
+								list="priorityList"
+								placeholder="-None-"
+								onKeyDown={disable}
+								onClick={disable}
+								caretColor="transparent"
+								cursor="pointer"
+							/>
 							<DataList id="priorityList">
 								<Option>-None-</Option>
 								<Option>High</Option>
@@ -90,8 +137,12 @@ const TicketForm = () => {
 					</Label>
 				</Body>
 				<ButtonContainer>
-					<SubmitButton />
-					<CancelButton />
+					<SubmitButton>
+						<Span color="#ffff">Submit</Span>
+					</SubmitButton>
+					<CancelButton onClick={handleCancel}>
+						<Span color="5a616f">Cancel</Span>
+					</CancelButton>
 				</ButtonContainer>
 			</Form>
 		</Container>
