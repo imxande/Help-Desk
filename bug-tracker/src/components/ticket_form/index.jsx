@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
+import { getDate } from "../../helpers/getDate";
 import {
 	Container,
 	Form,
@@ -23,9 +24,10 @@ import {
 } from "./style";
 
 const TicketForm = () => {
+	const now = getDate();
+	console.log(now);
 	// lets grab some user info to auto populate some of the fields in the form
 	const { name } = getUser();
-	console.log(name);
 
 	// navigation
 	const history = useNavigate();
