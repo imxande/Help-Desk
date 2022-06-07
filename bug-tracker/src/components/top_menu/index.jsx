@@ -1,4 +1,12 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
+import { IoCreateOutline } from "react-icons/io5";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { FiSettings } from "react-icons/fi";
+import { RiArrowDropDownFill } from "react-icons/ri";
+import { CustomerContext } from "../../context/CustomerContext";
 import {
 	Container,
 	LeftContent,
@@ -12,13 +20,6 @@ import {
 	Text,
 	DropIcon,
 } from "./style";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
-import { IoCreateOutline } from "react-icons/io5";
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { FiSettings } from "react-icons/fi";
-import { RiArrowDropDownFill } from "react-icons/ri";
-import { CustomerContext } from "../../context/CustomerContext";
 
 const TopMenu = () => {
 	/**
@@ -29,6 +30,17 @@ const TopMenu = () => {
 
 	// grab first and lastname from the user's data
 	const { name } = user;
+
+	// we will use navigate hook in oder to redirect
+	const history = useNavigate();
+
+	// handle click
+	const createClick = (e) => {
+		e.preventDefault();
+
+		// redirect on click
+		return history("/ticket");
+	};
 
 	return (
 		<div>
@@ -71,7 +83,7 @@ const TopMenu = () => {
 							</Button>
 						</List>
 						<List>
-							<Button data-title="Create">
+							<Button data-title="Create" onClick={createClick}>
 								<Icon>
 									<IoCreateOutline />
 								</Icon>
