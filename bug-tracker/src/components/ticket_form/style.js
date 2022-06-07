@@ -51,6 +51,8 @@ export const Field = styled.input`
 	border-bottom: 1px solid #000;
 	margin: 20px;
 	width: 250px;
+	caret-color: ${(props) => props.caretColor};
+	cursor: ${(props) => props.cursor};
 `;
 
 export const TextArea = styled.textarea`
