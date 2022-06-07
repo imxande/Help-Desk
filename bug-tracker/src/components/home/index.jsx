@@ -1,21 +1,24 @@
-import React, {useContext} from "react";
-import {Container, Header} from "./style"
-import {SideMenu} from "../side_menu"
-import TopMenu from "../top_menu"
-import { CustomerContext } from "../../context/CustomerContext";
-
+import React, { useState } from "react";
+import { Container, Header } from "./style";
+import { SideMenu } from "../side_menu";
+import TopMenu from "../top_menu";
 
 const Home = () => {
-  const {user} = useContext(CustomerContext);
-  return (
-    <Container>
-      <TopMenu/>
-      <Header>
-        {user.message}
-      </Header>
-      <SideMenu/>
-    </Container>
-  )
+	const [user, setUser] = useState({
+		userId: null,
+		name: "",
+		role: "",
+	});
+	// grab token from local storage
+	const token = localStorage.getItem("token");
+	console.log(token);
+	return (
+		<Container>
+			<TopMenu />
+			<Header>Check token in local storage</Header>
+			<SideMenu />
+		</Container>
+	);
 };
 
 export default Home;

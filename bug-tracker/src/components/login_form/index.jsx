@@ -13,8 +13,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CustomerContext } from "../../context/CustomerContext";
-import { flattenObject } from "../../helpers/flattenObject";
-import { setValues } from "../../helpers/setValues";
+// import { flattenObject } from "../../helpers/flattenObject";
+// import { setValues } from "../../helpers/setValues";
 
 const LoginForm = () => {
 	// we will use our context to store the response data globally
@@ -49,18 +49,18 @@ const LoginForm = () => {
 			.then((response) => {
 				// store data from response
 				const { data } = response;
-				const flattened = flattenObject(data);
-				console.log(flattened);
-				setValues(flattened);
+				// const flattened = flattenObject(data);
+				// console.log(flattened);
+				// setValues(flattened);
 				// store data in the context
 				setUser(data);
 
-				// // grab token
-				// const { token } = response.data;
-				// // store token
-				// localStorage.setItem("token", token);
+				// grab token
+				const { token } = response.data;
+				// store token
+				localStorage.setItem("token", token);
 
-				// and redirect to the users dashboard
+				// redirect to the users dashboard
 				history("/home");
 			})
 			.catch((error) => error);
