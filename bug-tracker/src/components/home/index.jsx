@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Container, Header } from "./style";
 import { SideMenu } from "../side_menu";
 import TopMenu from "../top_menu";
+import { decodeToken } from "react-jwt";
+import { CustomerContext } from "../../context/CustomerContext";
 
 const Home = () => {
-	const [user, setUser] = useState({
-		userId: null,
-		name: "",
-		role: "",
-	});
+	// context
+	const { setUser } = useContext(CustomerContext);
+	// state
+	const [authenticatedUser, setAuthenticatedUser] = useState({});
+
 	// grab token from local storage
 	const token = localStorage.getItem("token");
-	console.log(token);
+
+	// grab payload
+	const payload = decodeToken(token);
+
+	useEffect(() => {
+		console.log(payload);
+		// update state
+		setAuthenticatedUser(payload);
+		// update context
+		setUser(payload);
+	}, []);
+
 	return (
 		<Container>
 			<TopMenu />
-			<Header>Check token in local storage</Header>
+			<Header>{authenticatedUser.name}</Header>
 			<SideMenu />
 		</Container>
 	);
