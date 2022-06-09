@@ -22,7 +22,7 @@ export const getDate = () => {
 	//  grab date and time
 	const today = new Date();
 	const month = today.getMonth();
-	const day = today.getDay();
+	const day = today.getDate();
 	const year = today.getFullYear();
 	const hours = today.getHours();
 	const minutes = today.getMinutes();

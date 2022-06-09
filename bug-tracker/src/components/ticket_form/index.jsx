@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
-import { getDate } from "../../helpers/getDate";
+// import { getDate } from "../../helpers/getDate";
+import { DateContext } from "../../context/DateContext";
 import {
 	Container,
 	Form,
@@ -24,8 +25,8 @@ import {
 } from "./style";
 
 const TicketForm = () => {
-	// find date time
-	const { currentMonth, day, year } = getDate();
+	// let's bring over our date context to get the date stored
+	const { dateTime } = useContext(DateContext);
 
 	// lets grab some user info to auto populate some of the fields in the form
 	const { name } = getUser();
@@ -88,7 +89,7 @@ const TicketForm = () => {
 							Date
 							<Field
 								onKeyDown={disable}
-								placeholder={`${currentMonth} ${day}, ${year} `}
+								placeholder={dateTime}
 								caretColor="transparent"
 								cursor="default"
 							/>
