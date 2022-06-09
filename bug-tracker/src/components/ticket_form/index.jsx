@@ -1,8 +1,10 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
-// import { getDate } from "../../helpers/getDate";
+import { getDate } from "../../helpers/getDate";
 import { DateContext } from "../../context/DateContext";
+import { flattenObject } from "../../helpers/flattenObject";
+// import { axiosWithAuth } from "../../helpers/axiosWithAuth";
 import {
 	Container,
 	Form,
@@ -27,19 +29,19 @@ import {
 const TicketForm = () => {
 	// state
 	const [ticket, setTicket] = useState({
-		customer_i: null,
+		customer_i: "",
 		subject: "",
 		date: "",
 		status: "",
 		body: "",
-		employee_id: null,
+		employee_id: "",
 	});
 
 	// let's bring over our date context to get the date stored
 	const { dateTime } = useContext(DateContext);
 
 	// lets grab some user info to auto populate some of the fields in the form
-	const { name } = getUser();
+	const { name, subject } = getUser();
 
 	// navigation
 	const history = useNavigate();
@@ -66,13 +68,43 @@ const TicketForm = () => {
 			...ticket,
 			[name]: value,
 		});
+	};
 
-		console.log(ticket);
+	// handles submit
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		// get date
+		const dateTime = getDate();
+
+		// new ticket
+		const newTicket = {
+			customer_i: subject,
+			subject: ticket.subject,
+			date: dateTime,
+			status: ticket.status,
+			body: ticket.body,
+			employee_id: "",
+		};
+
+		// flatten new ticket
+		const flattenTicket = flattenObject(newTicket);
+
+		console.log(newTicket);
+		console.log();
+		console.log(flattenTicket);
+
+		// axiosWithAuth()
+		// 	.post("https://ale-bug-tracker.herokuapp.com/api/tickets/", newTicket)
+		// 	.then((response) => {
+		// 		console.log(response.data);
+		// 	})
+		// 	.catch((error) => console.log(error));
 	};
 
 	return (
 		<Container>
-			<Form>
+			<Form onSubmit={handleSubmit}>
 				<TopContent>
 					<Label htmlFor="name">
 						<LeftContent>
