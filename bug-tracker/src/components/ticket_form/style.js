@@ -13,10 +13,12 @@ export const TopContent = styled.div`
 export const MiddleContent = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-bottom: 40px;
 `;
 export const BottomContent = styled.div`
 	display: flex;
 	justify-content: center;
+	margin-bottom: 20px;
 `;
 
 export const Body = styled.div`
@@ -24,9 +26,18 @@ export const Body = styled.div`
 	justify-content: center;
 `;
 
+export const TextArea = styled.textarea`
+	margin-top: 15px;
+	width: 500px;
+	height: 200px;
+	font-size: 16px;
+	line-height: 1.5;
+`;
+
 export const Description = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 20px;
 `;
 
 export const LeftContent = styled.div`
@@ -53,13 +64,6 @@ export const Field = styled.input`
 	width: 250px;
 	caret-color: ${(props) => props.caretColor};
 	cursor: ${(props) => props.cursor};
-`;
-
-export const TextArea = styled.textarea`
-	width: 555px;
-	height: 200px;
-	line-height: 1.5;
-	font-size: 16px;
 `;
 
 export const ButtonContainer = styled.div`

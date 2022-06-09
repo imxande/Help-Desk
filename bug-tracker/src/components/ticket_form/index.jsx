@@ -141,7 +141,7 @@ const TicketForm = () => {
 						<Span color="#ffff">Submit</Span>
 					</SubmitButton>
 					<CancelButton onClick={handleCancel}>
-						<Span color="5a616f">Cancel</Span>
+						<Span color="#5a616f">Cancel</Span>
 					</CancelButton>
 				</ButtonContainer>
 			</Form>
