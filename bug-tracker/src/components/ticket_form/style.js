@@ -13,7 +13,7 @@ export const TopContent = styled.div`
 export const MiddleContent = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 `;
 export const BottomContent = styled.div`
 	display: flex;
@@ -29,7 +29,7 @@ export const Body = styled.div`
 export const TextArea = styled.textarea`
 	margin-top: 15px;
 	width: 500px;
-	height: 200px;
+	height: 150px;
 	font-size: 16px;
 	line-height: 1.5;
 `;
@@ -37,7 +37,7 @@ export const TextArea = styled.textarea`
 export const Description = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 `;
 
 export const LeftContent = styled.div`
