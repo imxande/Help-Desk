@@ -4,6 +4,7 @@ export const getDate = () => {
 	let currentMonth = "";
 	let standardHours = null;
 
+	// month abbreviations
 	const months = [
 		"Jan",
 		"Feb",

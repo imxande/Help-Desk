@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
 // import { getDate } from "../../helpers/getDate";
@@ -25,6 +25,16 @@ import {
 } from "./style";
 
 const TicketForm = () => {
+	// state
+	const [ticket, setTicket] = useState({
+		customer_i: null,
+		subject: "",
+		date: "",
+		status: "",
+		body: "",
+		employee_id: null,
+	});
+
 	// let's bring over our date context to get the date stored
 	const { dateTime } = useContext(DateContext);
 
@@ -47,6 +57,19 @@ const TicketForm = () => {
 		return history("/home");
 	};
 
+	// handles changes
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		// update state
+		setTicket({
+			...ticket,
+			[name]: value,
+		});
+
+		console.log(ticket);
+	};
+
 	return (
 		<Container>
 			<Form>
@@ -54,7 +77,7 @@ const TicketForm = () => {
 					<Label htmlFor="name">
 						<LeftContent>
 							Contact Name
-							<Field />
+							<Field type="text" name="name" />
 						</LeftContent>
 					</Label>
 					<Label htmlFor="status">
@@ -67,6 +90,9 @@ const TicketForm = () => {
 								caretColor="transparent"
 								cursor="pointer"
 								placeholder="New"
+								name="status"
+								value={ticket.status}
+								onChange={handleChange}
 							/>
 							<DataList id="statusList">
 								<Option>Open</Option>
