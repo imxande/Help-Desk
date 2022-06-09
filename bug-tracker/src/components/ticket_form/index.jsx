@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
 import { getDate } from "../../helpers/getDate";
 import { DateContext } from "../../context/DateContext";
-import { flattenObject } from "../../helpers/flattenObject";
-// import { axiosWithAuth } from "../../helpers/axiosWithAuth";
+import { axiosWithAuth } from "../../helpers/axiosWithAuth";
 import {
 	Container,
 	Form,
@@ -34,7 +33,7 @@ const TicketForm = () => {
 		date: "",
 		status: "",
 		body: "",
-		employee_id: "",
+		employee_id: null,
 	});
 
 	// let's bring over our date context to get the date stored
@@ -74,32 +73,28 @@ const TicketForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		// get date
-		const dateTime = getDate();
+		// get date and time
+		const { currentMonth, day, year, hours, minutes } = getDate();
 
 		// new ticket
 		const newTicket = {
 			customer_i: subject,
 			subject: ticket.subject,
-			date: dateTime,
+			date: `${currentMonth} ${day}, ${year}, ${hours}:${minutes}`,
 			status: ticket.status,
 			body: ticket.body,
-			employee_id: "",
+			employee_id: null,
 		};
 
-		// flatten new ticket
-		const flattenTicket = flattenObject(newTicket);
-
 		console.log(newTicket);
-		console.log();
-		console.log(flattenTicket);
 
-		// axiosWithAuth()
-		// 	.post("https://ale-bug-tracker.herokuapp.com/api/tickets/", newTicket)
-		// 	.then((response) => {
-		// 		console.log(response.data);
-		// 	})
-		// 	.catch((error) => console.log(error));
+		// create ticket using axios with auth
+		axiosWithAuth()
+			.post("/api/tickets", newTicket)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => console.log(error));
 	};
 
 	return (
@@ -139,7 +134,7 @@ const TicketForm = () => {
 					<Label htmlFor="subject">
 						<LeftContent>
 							Subject
-							<Field />
+							<Field type="text" name="subject" value={ticket.subject} onChange={handleChange} />
 						</LeftContent>
 					</Label>
 					<Label htmlFor="date">
@@ -150,6 +145,10 @@ const TicketForm = () => {
 								placeholder={dateTime}
 								caretColor="transparent"
 								cursor="default"
+								type="text"
+								name="date"
+								value={ticket.date}
+								onChange={handleChange}
 							/>
 						</RightContent>
 					</Label>
@@ -191,7 +190,7 @@ const TicketForm = () => {
 					<Label htmlFor="body">
 						<Description>
 							Description
-							<TextArea />
+							<TextArea type="text" name="body" value={ticket.body} onChange={handleChange} />
 						</Description>
 					</Label>
 				</Body>
