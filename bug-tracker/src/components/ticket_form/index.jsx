@@ -28,7 +28,7 @@ import {
 const TicketForm = () => {
 	// state
 	const [ticket, setTicket] = useState({
-		customer_i: "",
+		customer_id: "",
 		subject: "",
 		date: "",
 		status: "",
@@ -78,7 +78,7 @@ const TicketForm = () => {
 
 		// new ticket
 		const newTicket = {
-			customer_i: subject,
+			customer_id: subject,
 			subject: ticket.subject,
 			date: `${currentMonth} ${day}, ${year}, ${hours}:${minutes}`,
 			status: ticket.status,
