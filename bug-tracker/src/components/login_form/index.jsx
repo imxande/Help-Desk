@@ -16,7 +16,7 @@ import { CustomerContext } from "../../context/CustomerContext";
 
 const LoginForm = () => {
 	// we will use our context to store the response data globally
-	const {setUser} = useContext(CustomerContext);
+	const { setUser } = useContext(CustomerContext);
 
 	// our form state
 	const [authentication, setAuthentication] = useState({
@@ -28,16 +28,16 @@ const LoginForm = () => {
 	const history = useNavigate();
 
 	// handle the changes in the form
-    const handleChange = (e) => {
-        // grab changes
-        const {name, value} = e.target;
+	const handleChange = (e) => {
+		// grab changes
+		const { name, value } = e.target;
 
-        // let update our state
-        setAuthentication({
-            ...authentication, 
-            [name]: value
-        })
-    } 
+		// let update our state
+		setAuthentication({
+			...authentication,
+			[name]: value,
+		});
+	};
 	// handle submit
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -46,18 +46,19 @@ const LoginForm = () => {
 			.post("https://ale-bug-tracker.herokuapp.com/api/auth/customers/login", authentication)
 			.then((response) => {
 				// store data from response
-				const {data} = response
+				const { data } = response;
 
-				// store data in the context 
+				// store data in the context
 				setUser(data);
 
-                // grab token
-                const {token} = response.data;
-                // store token 
-                localStorage.setItem("token", token);
+				// grab token
+				const { token } = response.data;
 
-                // and redirect to the users dashboard
-				history("/home")
+				// store token
+				localStorage.setItem("token", token);
+
+				// redirect to the users dashboard
+				history("/home");
 			})
 			.catch((error) => error);
 	};
@@ -75,18 +76,18 @@ const LoginForm = () => {
 					/>
 				</Label>
 				<Label htmlFor="password">
-					<Field 
-                        name="password"
+					<Field
+						name="password"
 						type="password"
 						placeholder="Password"
 						value={authentication.password}
 						onChange={handleChange}
-                    />
+					/>
 				</Label>
 				<ForgotButton>Forgot password?</ForgotButton>
 				<ContinueButton disabled={!authentication.email || !authentication.password}>
-                    Continue
-                </ContinueButton>
+					Continue
+				</ContinueButton>
 				<SignUpContent>
 					<Text>Do you have an account?</Text>
 					<SignUpButton>
