@@ -7,6 +7,9 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { FiSettings } from "react-icons/fi";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import { CustomerContext } from "../../context/CustomerContext";
+import { DateContext } from "../../context/DateContext";
+import { getDate } from "../../helpers/getDate";
+
 import {
 	Container,
 	LeftContent,
@@ -27,6 +30,7 @@ const TopMenu = () => {
 	 * Note that this info was added to our CustomerContext as the user logged in
 	 */
 	const { user } = useContext(CustomerContext);
+	const { setDateTime } = useContext(DateContext);
 
 	// grab first and lastname from the user's data
 	const { name } = user;
@@ -37,6 +41,12 @@ const TopMenu = () => {
 	// handle click
 	const createClick = (e) => {
 		e.preventDefault();
+
+		// find date time
+		const { currentMonth, day, year } = getDate();
+
+		// update dateTime on context
+		setDateTime(`${currentMonth} ${day}, ${year}`);
 
 		// redirect on click
 		return history("/ticket");
