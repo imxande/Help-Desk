@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Header } from "./style";
+import { Container, Header, TicketListContainer } from "./style";
 import { SideMenu } from "../side_menu";
 import TopMenu from "../top_menu";
 import { getUser } from "../../helpers/getUser";
@@ -15,7 +15,6 @@ const Home = () => {
 	const userInfo = getUser();
 
 	useEffect(() => {
-		console.log(userInfo);
 		// update state
 		setAuthenticatedUser(userInfo);
 		// update context
@@ -27,6 +26,7 @@ const Home = () => {
 			<TopMenu />
 			<Header>{authenticatedUser.name}</Header>
 			<SideMenu />
+			<TicketListContainer>List here!</TicketListContainer>
 		</Container>
 	);
 };

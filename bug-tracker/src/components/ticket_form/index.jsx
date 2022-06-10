@@ -28,7 +28,7 @@ import {
 const TicketForm = () => {
 	// state
 	const [ticket, setTicket] = useState({
-		customer_i: "",
+		customer_id: "",
 		subject: "",
 		date: "",
 		status: "",
@@ -78,15 +78,13 @@ const TicketForm = () => {
 
 		// new ticket
 		const newTicket = {
-			customer_i: subject,
+			customer_id: subject,
 			subject: ticket.subject,
 			date: `${currentMonth} ${day}, ${year}, ${hours}:${minutes}`,
 			status: ticket.status,
 			body: ticket.body,
 			employee_id: null,
 		};
-
-		console.log(newTicket);
 
 		// create ticket using axios with auth
 		axiosWithAuth()
@@ -95,6 +93,9 @@ const TicketForm = () => {
 				console.log(response.data);
 			})
 			.catch((error) => console.log(error));
+
+		// redirect to home
+		history("/home");
 	};
 
 	return (
