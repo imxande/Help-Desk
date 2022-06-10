@@ -86,8 +86,6 @@ const TicketForm = () => {
 			employee_id: null,
 		};
 
-		console.log(newTicket);
-
 		// create ticket using axios with auth
 		axiosWithAuth()
 			.post("/api/tickets", newTicket)
@@ -95,6 +93,9 @@ const TicketForm = () => {
 				console.log(response.data);
 			})
 			.catch((error) => console.log(error));
+
+		// redirect to home
+		history("/home");
 	};
 
 	return (
