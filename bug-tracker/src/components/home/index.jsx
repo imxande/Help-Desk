@@ -26,7 +26,7 @@ const Home = () => {
 			<TopMenu />
 			<Header>{authenticatedUser.name}</Header>
 			<SideMenu />
-			<TicketListContainer></TicketListContainer>
+			<TicketListContainer>List here!</TicketListContainer>
 		</Container>
 	);
 };
