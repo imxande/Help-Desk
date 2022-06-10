@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUser } from "../../helpers/getUser";
-// import { getDate } from "../../helpers/getDate";
+import { getDate } from "../../helpers/getDate";
 import { DateContext } from "../../context/DateContext";
+import { axiosWithAuth } from "../../helpers/axiosWithAuth";
 import {
 	Container,
 	Form,
@@ -27,7 +28,7 @@ import {
 const TicketForm = () => {
 	// state
 	const [ticket, setTicket] = useState({
-		customer_i: null,
+		customer_i: "",
 		subject: "",
 		date: "",
 		status: "",
@@ -39,7 +40,7 @@ const TicketForm = () => {
 	const { dateTime } = useContext(DateContext);
 
 	// lets grab some user info to auto populate some of the fields in the form
-	const { name } = getUser();
+	const { name, subject } = getUser();
 
 	// navigation
 	const history = useNavigate();
@@ -66,13 +67,39 @@ const TicketForm = () => {
 			...ticket,
 			[name]: value,
 		});
+	};
 
-		console.log(ticket);
+	// handles submit
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		// get date and time
+		const { currentMonth, day, year, hours, minutes } = getDate();
+
+		// new ticket
+		const newTicket = {
+			customer_i: subject,
+			subject: ticket.subject,
+			date: `${currentMonth} ${day}, ${year}, ${hours}:${minutes}`,
+			status: ticket.status,
+			body: ticket.body,
+			employee_id: null,
+		};
+
+		console.log(newTicket);
+
+		// create ticket using axios with auth
+		axiosWithAuth()
+			.post("/api/tickets", newTicket)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => console.log(error));
 	};
 
 	return (
 		<Container>
-			<Form>
+			<Form onSubmit={handleSubmit}>
 				<TopContent>
 					<Label htmlFor="name">
 						<LeftContent>
@@ -107,7 +134,7 @@ const TicketForm = () => {
 					<Label htmlFor="subject">
 						<LeftContent>
 							Subject
-							<Field />
+							<Field type="text" name="subject" value={ticket.subject} onChange={handleChange} />
 						</LeftContent>
 					</Label>
 					<Label htmlFor="date">
@@ -118,6 +145,10 @@ const TicketForm = () => {
 								placeholder={dateTime}
 								caretColor="transparent"
 								cursor="default"
+								type="text"
+								name="date"
+								value={ticket.date}
+								onChange={handleChange}
 							/>
 						</RightContent>
 					</Label>
@@ -159,7 +190,7 @@ const TicketForm = () => {
 					<Label htmlFor="body">
 						<Description>
 							Description
-							<TextArea />
+							<TextArea type="text" name="body" value={ticket.body} onChange={handleChange} />
 						</Description>
 					</Label>
 				</Body>
