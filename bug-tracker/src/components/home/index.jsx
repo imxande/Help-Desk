@@ -4,6 +4,7 @@ import { SideMenu } from "../side_menu";
 import TopMenu from "../top_menu";
 import { getUser } from "../../helpers/getUser";
 import { CustomerContext } from "../../context/CustomerContext";
+import TicketList from "../ticket_list";
 
 const Home = () => {
 	// context
@@ -26,7 +27,9 @@ const Home = () => {
 			<TopMenu />
 			<Header>{authenticatedUser.name}</Header>
 			<SideMenu />
-			<TicketListContainer>List here!</TicketListContainer>
+			<TicketListContainer>
+				<TicketList userInfo={userInfo}/>
+			</TicketListContainer>
 		</Container>
 	);
 };
