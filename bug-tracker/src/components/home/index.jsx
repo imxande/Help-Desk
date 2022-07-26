@@ -28,7 +28,7 @@ const Home = () => {
 			<Header>{authenticatedUser.name}</Header>
 			<SideMenu />
 			<TicketListContainer>
-				<TicketList/>
+				<TicketList userInfo={userInfo}/>
 			</TicketListContainer>
 		</Container>
 	);
