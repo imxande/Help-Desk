@@ -4,7 +4,8 @@ import { getUser } from "../../helpers/getUser";
 import { getDate } from "../../helpers/getDate";
 import { DateContext } from "../../context/DateContext";
 import { axiosWithAuth } from "../../helpers/axiosWithAuth";
-import {
+import
+{
 	Container,
 	Form,
 	TopContent,
@@ -25,19 +26,21 @@ import {
 	Span,
 } from "./style";
 
-const TicketForm = () => {
+const TicketForm = () =>
+{
 	// state
-	const [ticket, setTicket] = useState({
+	const [ ticket, setTicket ] = useState( {
 		customer_id: "",
 		subject: "",
+		priority: "",
 		date: "",
 		status: "",
 		body: "",
 		employee_id: null,
-	});
+	} );
 
 	// let's bring over our date context to get the date stored
-	const { dateTime } = useContext(DateContext);
+	const { dateTime } = useContext( DateContext );
 
 	// lets grab some user info to auto populate some of the fields in the form
 	const { name, subject } = getUser();
@@ -46,31 +49,35 @@ const TicketForm = () => {
 	const history = useNavigate();
 
 	// handles on key down
-	const disable = (e) => {
+	const disable = ( e ) =>
+	{
 		e.preventDefault();
 		return false;
 	};
 
 	// handles cancel
-	const handleCancel = (e) => {
+	const handleCancel = ( e ) =>
+	{
 		e.preventDefault();
 		// redirect to home
-		return history("/home");
+		return history( "/home" );
 	};
 
 	// handles changes
-	const handleChange = (e) => {
+	const handleChange = ( e ) =>
+	{
 		const { name, value } = e.target;
 
 		// update state
-		setTicket({
+		setTicket( {
 			...ticket,
-			[name]: value,
-		});
+			[ name ]: value,
+		} );
 	};
 
 	// handles submit
-	const handleSubmit = (e) => {
+	const handleSubmit = ( e ) =>
+	{
 		e.preventDefault();
 
 		// get date and time
@@ -80,7 +87,8 @@ const TicketForm = () => {
 		const newTicket = {
 			customer_id: subject,
 			subject: ticket.subject,
-			date: `${currentMonth} ${day}, ${year}, ${hours}:${minutes}`,
+			priority: ticket.priority,
+			date: `${ currentMonth } ${ day }, ${ year }, ${ hours }:${ minutes }`,
 			status: ticket.status,
 			body: ticket.body,
 			employee_id: null,
@@ -88,19 +96,20 @@ const TicketForm = () => {
 
 		// create ticket using axios with auth
 		axiosWithAuth()
-			.post("/api/tickets", newTicket)
-			.then((response) => {
-				console.log(response.data);
-			})
-			.catch((error) => console.log(error));
+			.post( "/api/tickets", newTicket )
+			.then( ( response ) =>
+			{
+				console.log( response.data );
+			} )
+			.catch( ( error ) => console.log( error ) );
 
 		// redirect to home
-		history("/home");
+		history( "/home" );
 	};
 
 	return (
 		<Container>
-			<Form onSubmit={handleSubmit}>
+			<Form onSubmit={ handleSubmit }>
 				<TopContent>
 					<Label htmlFor="name">
 						<LeftContent>
@@ -112,15 +121,15 @@ const TicketForm = () => {
 						<RightContent>
 							Status
 							<Field
-								onKeyDown={disable}
+								onKeyDown={ disable }
 								type="text"
 								list="statusList"
 								caretColor="transparent"
 								cursor="pointer"
 								placeholder="New"
 								name="status"
-								value={ticket.status}
-								onChange={handleChange}
+								value={ ticket.status }
+								onChange={ handleChange }
 							/>
 							<DataList id="statusList">
 								<Option>Open</Option>
@@ -135,21 +144,21 @@ const TicketForm = () => {
 					<Label htmlFor="subject">
 						<LeftContent>
 							Subject
-							<Field type="text" name="subject" value={ticket.subject} onChange={handleChange} />
+							<Field type="text" name="subject" value={ ticket.subject } onChange={ handleChange } />
 						</LeftContent>
 					</Label>
 					<Label htmlFor="date">
 						<RightContent>
 							Date
 							<Field
-								onKeyDown={disable}
-								placeholder={dateTime}
+								onKeyDown={ disable }
+								placeholder={ dateTime }
 								caretColor="transparent"
 								cursor="default"
 								type="text"
 								name="date"
-								value={ticket.date}
-								onChange={handleChange}
+								value={ ticket.date }
+								onChange={ handleChange }
 							/>
 						</RightContent>
 					</Label>
@@ -159,8 +168,8 @@ const TicketForm = () => {
 						<LeftContent>
 							Ticket Owner
 							<Field
-								placeholder={`${name}`}
-								onKeyDown={disable}
+								placeholder={ `${ name }` }
+								onKeyDown={ disable }
 								caretColor="transparent"
 								cursor="default"
 							/>
@@ -173,10 +182,13 @@ const TicketForm = () => {
 								type="text"
 								list="priorityList"
 								placeholder="-None-"
-								onKeyDown={disable}
-								onClick={disable}
+								onKeyDown={ disable }
+								onClick={ disable }
 								caretColor="transparent"
 								cursor="pointer"
+								name="priority"
+								value={ ticket.priority }
+								onChange={ handleChange }
 							/>
 							<DataList id="priorityList">
 								<Option>-None-</Option>
@@ -191,7 +203,7 @@ const TicketForm = () => {
 					<Label htmlFor="body">
 						<Description>
 							Description
-							<TextArea type="text" name="body" value={ticket.body} onChange={handleChange} />
+							<TextArea type="text" name="body" value={ ticket.body } onChange={ handleChange } />
 						</Description>
 					</Label>
 				</Body>
@@ -199,7 +211,7 @@ const TicketForm = () => {
 					<SubmitButton>
 						<Span color="#ffff">Submit</Span>
 					</SubmitButton>
-					<CancelButton onClick={handleCancel}>
+					<CancelButton onClick={ handleCancel }>
 						<Span color="#5a616f">Cancel</Span>
 					</CancelButton>
 				</ButtonContainer>

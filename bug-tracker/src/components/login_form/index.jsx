@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import {
+import
+{
 	Container,
 	Form,
 	Label,
@@ -14,65 +15,74 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CustomerContext } from "../../context/CustomerContext";
 
-const LoginForm = () => {
+const LoginForm = () =>
+{
 	// we will use our context to store the response data globally
-	const { setUser } = useContext(CustomerContext);
+	const { setUser } = useContext( CustomerContext );
 
 	// our form state
-	const [authentication, setAuthentication] = useState({
+	const [ authentication, setAuthentication ] = useState( {
 		email: "",
 		password: "",
-	});
+	} );
 
 	// we will use this navigation hook to redirect to dashboard once user successfully logs in
 	const history = useNavigate();
 
 	// handle the changes in the form
-	const handleChange = (e) => {
+	const handleChange = ( e ) =>
+	{
 		// grab changes
 		const { name, value } = e.target;
 
 		// let update our state
-		setAuthentication({
+		setAuthentication( {
 			...authentication,
-			[name]: value,
-		});
+			[ name ]: value,
+		} );
 	};
+
+	// URL placeholders
+	const developmentURL = "http://localhost:4000/api/auth/customers/login";
+	// const baseURL = "https://ale-bug-tracker.herokuapp.com/api/auth/customers/login";
+
 	// handle submit
-	const handleSubmit = (e) => {
+	const handleSubmit = ( e ) =>
+	{
 		e.preventDefault();
 
 		axios
-			.post("https://ale-bug-tracker.herokuapp.com/api/auth/customers/login", authentication)
-			.then((response) => {
+			.post( developmentURL, authentication )
+			.then( ( response ) =>
+			{
 				// store data from response
 				const { data } = response;
 
 				// store data in the context
-				setUser(data);
+				setUser( data );
 
 				// grab token
 				const { token } = response.data;
 
 				// store token
-				localStorage.setItem("token", token);
+				localStorage.setItem( "token", token );
 
 				// redirect to the users dashboard
-				history("/home");
-			})
-			.catch((error) => error);
+				history( "/home" );
+			} )
+			.catch( ( error ) => error );
 	};
 
 	return (
 		<Container>
-			<Form onSubmit={handleSubmit}>
+			<Form onSubmit={ handleSubmit }>
 				<Label htmlFor="email">
 					<Field
 						name="email"
 						type="email"
 						placeholder="Email address"
-						value={authentication.email}
-						onChange={handleChange}
+						value={ authentication.email }
+						onChange={ handleChange }
 					/>
 				</Label>
 				<Label htmlFor="password">
@@ -80,12 +90,12 @@ const LoginForm = () => {
 						name="password"
 						type="password"
 						placeholder="Password"
-						value={authentication.password}
-						onChange={handleChange}
+						value={ authentication.password }
+						onChange={ handleChange }
 					/>
 				</Label>
 				<ForgotButton>Forgot password?</ForgotButton>
-				<ContinueButton disabled={!authentication.email || !authentication.password}>
+				<ContinueButton disabled={ !authentication.email || !authentication.password }>
 					Continue
 				</ContinueButton>
 				<SignUpContent>
