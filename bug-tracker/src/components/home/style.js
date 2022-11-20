@@ -5,20 +5,20 @@ export const Container = styled.div`
 	height: 100%;
 `;
 
+export const Content = styled.div``
+
 export const Header = styled.header`
-	font-size: 2em;
-	margin: 20px 80px;
-	position: absolute;
+	// font-size: 2em;
+	// margin: 20px 80px;
+	// position: absolute;
 `;
 
 export const TicketListContainer = styled.div`
-	position: absolute;
-	border: 1px solid red;
-	width: 100px;
-	height: 100px;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
+	// position: absolute;
+	// border: 1px solid red;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// bottom: 0;
+	// margin: auto;
 `;
