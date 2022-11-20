@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../../helpers/axiosWithAuth";
-import { DIV } from "./style";
+import { Container, LeftContent, RightContent } from "./style";
 
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 const TicketList = ( { userInfo } ) =>
@@ -26,7 +26,10 @@ const TicketList = ( { userInfo } ) =>
     }, [] );
 
     return (
-        <DIV>Love you guys!</DIV>
+        <Container>
+            <LeftContent></LeftContent>
+            <RightContent></RightContent>
+        </Container>
     );
 };
 

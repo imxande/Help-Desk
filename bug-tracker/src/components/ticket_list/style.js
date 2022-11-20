@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-export const DIV = styled.div`
-    font-size: 100px;
-    color: red;
-    border: 1px solid blue;
+export const Container = styled.div`
+    // border: 1px solid red;
+    // width: 500px;
+    // height: 500px;
 `;
+
+export const LeftContent = styled.div``
+export const RightContent = styled.div``
