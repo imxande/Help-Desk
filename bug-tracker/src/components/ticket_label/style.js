@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    border: 1px solid red;
-    height: 48px;
+    
 `;
 
+export const Subject = styled.p`
+
+`

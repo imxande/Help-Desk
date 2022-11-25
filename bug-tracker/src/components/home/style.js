@@ -9,17 +9,27 @@ export const Content = styled.div`
 	display: flex;
 `
 
+export const MiddleContainer = styled.div`
+	width: 80%;
+`
+
 export const Header = styled.header`
 	font-size: 2em;
 	margin: 1em 2em;
+	height: 10%;
 `;
 
 export const TicketListContainer = styled.div`
-	// position: absolute;
-	// border: 1px solid red;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
-	// margin: auto;
+	width: 100%;
+	border: 1px solid red;
+	margin: 0 3.9em;
+	height: 500px;
 `;
+
+export const TextContainer = styled.div`
+	font-size: 2em;
+	font-weight: 700;
+	margin: 2em 2em 0.3em;
+	border-bottom: 1px solid grey;
+
+`
