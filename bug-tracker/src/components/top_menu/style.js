@@ -43,6 +43,7 @@ export const Button = styled.button`
 	border: none;
 	color: white;
 	position: relative;
+	
 	&:hover::after {
 		content: attr(data-title);
 		position: absolute;

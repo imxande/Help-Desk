@@ -137,3 +137,22 @@ table {
 	height: 100vh;
 	background: #fafafa;
 }
+
+.open {
+	width: 10vw !important;
+}
+
+.close, .hidden {
+	display: none !important;
+}
+
+.show {
+	display: block;
+}
+
+.flex_items {
+	display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+	cursor: pointer;
+}
