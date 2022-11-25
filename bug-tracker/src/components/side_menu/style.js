@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	width: 5.2vh;
-	height: 100vh;
+	height: 94.68vh;
 	background-color: #dcdcdc;
 	display: flex;
-	position: fixed;
 	flex-direction: column;
+
 `;
 export const MenuContainer = styled.div`
 	// border: 1px solid red;

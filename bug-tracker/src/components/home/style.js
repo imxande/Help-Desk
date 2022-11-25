@@ -5,12 +5,13 @@ export const Container = styled.div`
 	height: 100%;
 `;
 
-export const Content = styled.div``
+export const Content = styled.div`
+	display: flex;
+`
 
 export const Header = styled.header`
-	// font-size: 2em;
-	// margin: 20px 80px;
-	// position: absolute;
+	font-size: 2em;
+	margin: 1em 2em;
 `;
 
 export const TicketListContainer = styled.div`
