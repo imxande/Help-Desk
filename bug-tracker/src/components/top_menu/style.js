@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 	background: #242943;
 	width: 100%;
-	height: 50px;
+	height: 3em;
 	display: flex;
 	justify-content: space-between;
 `;
@@ -14,7 +14,7 @@ export const UL = styled.ul`
 
 export const List = styled.li`
 	// border: 1px solid red;
-	margin-left: 15px;
+	margin-left: 1em;
 
 	&:hover {
 		background: rgba(255, 255, 255, 0.5);
@@ -24,7 +24,7 @@ export const List = styled.li`
 export const LeftContent = styled.div`
 	display: flex;
 	align-items: center;
-	margin: 20px;
+	margin: 1.3em;
 `;
 
 export const RightContent = styled.div`
@@ -43,11 +43,12 @@ export const Button = styled.button`
 	border: none;
 	color: white;
 	position: relative;
+	
 	&:hover::after {
 		content: attr(data-title);
 		position: absolute;
 		background: #242943;
-		font-size: 14px;
+		font-size: 16px;
 		padding: 5px;
 		margin-top: 10px;
 		border-radius: 10%;
@@ -63,16 +64,27 @@ export const Icon = styled.div`
 	}
 `;
 
-export const DropDown = styled.div``;
-
 export const Text = styled.span`
 	font-size: 25px;
 	cursor: pointer;
 	color: white;
 `;
 
-export const DropIcon = styled.i`
-	color: white;
-`;
+export const ProfileContainer = styled.button`
+background: #242943;
+border: none;
+color: white;
+position: relative;
+&:hover::after {
+	content: attr(data-title);
+	position: absolute;
+	background: #242943;
+	font-size: 16px;
+	padding: 5px;
+	margin-top: 10px;
+	right: 0.5em;
+	border-radius: 10%;
+	white-space: nowrap;
+}
+`
 
-export const DepartmentsContainer = styled.div``;

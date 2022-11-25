@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Container, Header, TicketListContainer, Content } from "./style";
+import { Container, Header, TicketListContainer, Content, MiddleContainer, TextContainer } from "./style";
 import { SideMenu } from "../side_menu";
 import TopMenu from "../top_menu";
 import { getUser } from "../../helpers/getUser";
@@ -29,12 +29,14 @@ const Home = () =>
 			<TopMenu />
 			<Content>
 				<SideMenu />
-				<Header>{ authenticatedUser.name }</Header>
+				<MiddleContainer>
+					<Header>{ authenticatedUser.name }</Header>
+					<TextContainer>TO-DO</TextContainer>
+					<TicketListContainer>
+						<TicketList userInfo={ userInfo } />
+					</TicketListContainer>
+				</MiddleContainer>
 			</Content>
-
-			<TicketListContainer>
-				<TicketList userInfo={ userInfo } />
-			</TicketListContainer>
 		</Container>
 	);
 };

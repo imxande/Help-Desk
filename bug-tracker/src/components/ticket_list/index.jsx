@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../../helpers/axiosWithAuth";
-import { Container, LeftContent, RightContent } from "./style";
+import { Container } from "./style";
+import TicketLabel from "../ticket_label";
 
 /* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
 const TicketList = ( { userInfo } ) =>
@@ -19,17 +20,33 @@ const TicketList = ( { userInfo } ) =>
             .get( `${ developmentURL }${ customerId }` )
             .then( response =>
             {
-                console.log( "Response: ", response );
                 setTickets( response.data );
             } )
             .catch( error => console.log( error ) );
     }, [] );
 
     return (
-        <Container>
-            <LeftContent></LeftContent>
-            <RightContent></RightContent>
-        </Container>
+        <div>
+            { tickets.map( ( ticket, index ) =>
+            {
+                return (
+                    <Container>
+                        <TicketLabel
+                            key={ index }
+                            subject={ ticket.subject }
+                            status={ ticket.status }
+                            priority={ ticket.priority }
+                            body={ ticket.body }
+                            customerId={ ticket.customer_id }
+                            date={ ticket.date }
+                            ticketId={ ticket.ticket_id }
+                        />
+                    </Container>
+
+                );
+            } ) }
+        </div>
+
     );
 };
 

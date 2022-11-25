@@ -5,12 +5,12 @@ import { BiUserCircle } from "react-icons/bi";
 import { IoCreateOutline } from "react-icons/io5";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FiSettings } from "react-icons/fi";
-import { RiArrowDropDownFill } from "react-icons/ri";
 import { CustomerContext } from "../../context/CustomerContext";
 import { DateContext } from "../../context/DateContext";
 import { getDate } from "../../helpers/getDate";
 
-import {
+import
+{
 	Container,
 	LeftContent,
 	Link,
@@ -19,18 +19,17 @@ import {
 	Button,
 	Icon,
 	List,
-	DropDown,
-	Text,
-	DropIcon,
+	ProfileContainer
 } from "./style";
 
-const TopMenu = () => {
+const TopMenu = () =>
+{
 	/**
 	 * Let us grab the user info we got in our context api
 	 * Note that this info was added to our CustomerContext as the user logged in
 	 */
-	const { user } = useContext(CustomerContext);
-	const { setDateTime } = useContext(DateContext);
+	const { user } = useContext( CustomerContext );
+	const { setDateTime } = useContext( DateContext );
 
 	// grab first and lastname from the user's data
 	const { name } = user;
@@ -39,17 +38,18 @@ const TopMenu = () => {
 	const history = useNavigate();
 
 	// handle click
-	const createClick = (e) => {
+	const createClick = ( e ) =>
+	{
 		e.preventDefault();
 
 		// find date time
 		const { currentMonth, day, year } = getDate();
 
 		// update dateTime on context
-		setDateTime(`${currentMonth} ${day}, ${year}`);
+		setDateTime( `${ currentMonth } ${ day }, ${ year }` );
 
 		// redirect on click
-		return history("/ticket");
+		return history( "/ticket" );
 	};
 
 	return (
@@ -65,27 +65,6 @@ const TopMenu = () => {
 				<RightContent>
 					<UL>
 						<List>
-							<DropDown>
-								<Text>
-									{/* 👇 STATE WILL GO HERE */}
-									Help Desk
-								</Text>
-								<DropIcon>
-									<RiArrowDropDownFill />
-								</DropIcon>
-							</DropDown>
-							{/* <Form>
-                                <Label>Departments</Label>
-                                <Select>
-                                    <Option>All</Option>
-                                    <Option>IT</Option>
-                                    <Option>QA</Option>
-                                    <Option>DevOps</Option>
-                                    <Option>Product</Option>
-                                </Select>
-                            </Form> */}
-						</List>
-						<List>
 							<Button data-title="Search">
 								<Icon>
 									<AiOutlineSearch />
@@ -93,7 +72,7 @@ const TopMenu = () => {
 							</Button>
 						</List>
 						<List>
-							<Button data-title="Create" onClick={createClick}>
+							<Button data-title="Create" onClick={ createClick }>
 								<Icon>
 									<IoCreateOutline />
 								</Icon>
@@ -114,11 +93,11 @@ const TopMenu = () => {
 							</Button>
 						</List>
 						<List>
-							<Button data-title={`${name}`}>
+							<ProfileContainer data-title={ `${ name }` }>
 								<Icon>
 									<BiUserCircle />
 								</Icon>
-							</Button>
+							</ProfileContainer>
 						</List>
 					</UL>
 				</RightContent>
