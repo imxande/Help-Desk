@@ -27,12 +27,11 @@ const TicketList = ( { userInfo } ) =>
 
     return (
         <div>
-            { tickets.map( ( ticket, index ) =>
+            { tickets.map( ( ticket ) =>
             {
                 return (
-                    <Container>
+                    <Container key={ ticket.ticket_id }>
                         <TicketLabel
-                            key={ index }
                             subject={ ticket.subject }
                             status={ ticket.status }
                             priority={ ticket.priority }
