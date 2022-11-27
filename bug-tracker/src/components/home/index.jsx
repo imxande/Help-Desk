@@ -31,7 +31,7 @@ const Home = () =>
 				<SideMenu />
 				<MiddleContainer>
 					<Header>{ authenticatedUser.name }</Header>
-					<TextContainer>TO-DO</TextContainer>
+					<TextContainer>My Tasks</TextContainer>
 					<TicketListContainer>
 						<TicketList userInfo={ userInfo } />
 					</TicketListContainer>
