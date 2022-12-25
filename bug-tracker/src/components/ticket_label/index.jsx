@@ -16,9 +16,8 @@ const TicketLabel = ( props ) =>
     const uniqueId = uuidv4();
 
     // priorities click handler
-    const priorityClick = ( e ) =>
+    const priorityClick = () =>
     {
-        console.log( e.target );
         setVisibleMenu( !visibleMenu );
     };
 
