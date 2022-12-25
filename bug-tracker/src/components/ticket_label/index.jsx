@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Subject, Priority } from "./style";
 import { setStatus } from "../../helpers/setStatus";
 import { v4 as uuidv4 } from 'uuid';
+import PriorityDropDown from "../priorities_dropdown";
+import "../../index.css";
 
 const TicketLabel = ( props ) =>
 {
+    const [ visibleMenu, setVisibleMenu ] = useState( false );
+
     // console.log( props );
     const statusColor = setStatus( props.status );
 
@@ -15,16 +19,22 @@ const TicketLabel = ( props ) =>
     const priorityClick = ( e ) =>
     {
         console.log( e.target );
+        setVisibleMenu( !visibleMenu );
     };
 
 
     return (
-        <Container>
-            <Priority id={ uniqueId } onClick={ priorityClick } backgroundColor={ statusColor } />
-            <Subject>
-                { props.subject }
-            </Subject>
-        </Container>
+        <>
+            <Container>
+                <Priority id={ uniqueId } onClick={ priorityClick } backgroundColor={ statusColor }>
+                    { visibleMenu ? <PriorityDropDown /> : null }
+                </Priority>
+                <Subject>
+                    { props.subject }
+                </Subject>
+            </Container>
+
+        </>
     );
 };
 
