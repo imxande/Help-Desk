@@ -10,8 +10,9 @@ const TicketLabel = ( props ) =>
     const [ visibleMenu, setVisibleMenu ] = useState( false );
     const prioritiesRef = useRef();
 
-    // console.log( props );
+    console.log( props );
     const statusColor = setStatus( props.status );
+    const priority = props.priority;
 
     // create unique id
     const uniqueId = uuidv4();
@@ -54,7 +55,12 @@ const TicketLabel = ( props ) =>
     return (
         <>
             <Container>
-                <Priority ref={ prioritiesRef } id={ uniqueId } onClick={ priorityClick } backgroundColor={ statusColor }>
+                <Priority data-title={ priority }
+                    ref={ prioritiesRef }
+                    id={ uniqueId }
+                    onClick={ priorityClick }
+                    backgroundColor={ statusColor }
+                >
                     { visibleMenu ? <PriorityDropDown /> : null }
                 </Priority>
                 <Subject>
