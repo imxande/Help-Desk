@@ -6,10 +6,6 @@ export const Container = styled.div`
     position: relative;
 `;
 
-export const Subject = styled.p`
-
-`
-
 export const Priority = styled.span`
     font-size: 1.3em;
     margin: 0 0.5em;
@@ -33,3 +29,12 @@ export const Priority = styled.span`
         padding: 0.3em 0.5em;
     }
 `
+
+export const Subject = styled.p`
+
+`
+
+export const Date = styled.time`
+    padding-right: 1.5em;
+`
+

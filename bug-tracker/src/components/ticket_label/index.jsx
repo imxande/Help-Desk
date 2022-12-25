@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Subject, Priority } from "./style";
+import { Container, Subject, Priority, Date } from "./style";
 import { setStatus } from "../../helpers/setStatus";
 import { v4 as uuidv4 } from 'uuid';
 import PriorityDropDown from "../priorities_dropdown";
@@ -67,6 +67,7 @@ const TicketLabel = ( props ) =>
                     { props.subject }
                 </Subject>
             </Container>
+            <Date date-time={ props.date }>{ props.date }</Date>
 
         </>
     );
