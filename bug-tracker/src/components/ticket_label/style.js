@@ -15,6 +15,10 @@ export const Priority = styled.span`
     border: 1px solid #000000;
     width: 0.5em;
     height: 0.5em;
-
+    cursor: pointer;
     background: ${(props) => props.backgroundColor};
+
+    &:hover {
+        border: 1px solid #0BFFFF;
+    }
 `
