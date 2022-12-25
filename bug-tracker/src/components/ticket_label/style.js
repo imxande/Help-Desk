@@ -3,11 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     align-items: center;
+    position: relative;
 `;
-
-export const Subject = styled.p`
-
-`
 
 export const Priority = styled.span`
     font-size: 1.3em;
@@ -21,4 +18,23 @@ export const Priority = styled.span`
     &:hover {
         border: 1px solid #0BFFFF;
     }
+
+    &:hover::after {
+        content: attr(data-title);
+        position: absolute;
+        background: #1e272e;
+        border-radius: 10%;
+        left: 23%;
+        color: #fff;
+        padding: 0.3em 0.5em;
+    }
 `
+
+export const Subject = styled.p`
+
+`
+
+export const Date = styled.time`
+    padding-right: 1.5em;
+`
+

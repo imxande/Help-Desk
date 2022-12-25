@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Subject, Priority } from "./style";
+import { Container, Subject, Priority, Date } from "./style";
 import { setStatus } from "../../helpers/setStatus";
 import { v4 as uuidv4 } from 'uuid';
 import PriorityDropDown from "../priorities_dropdown";
@@ -10,8 +10,9 @@ const TicketLabel = ( props ) =>
     const [ visibleMenu, setVisibleMenu ] = useState( false );
     const prioritiesRef = useRef();
 
-    // console.log( props );
+    console.log( props );
     const statusColor = setStatus( props.status );
+    const priority = props.priority;
 
     // create unique id
     const uniqueId = uuidv4();
@@ -54,13 +55,19 @@ const TicketLabel = ( props ) =>
     return (
         <>
             <Container>
-                <Priority ref={ prioritiesRef } id={ uniqueId } onClick={ priorityClick } backgroundColor={ statusColor }>
+                <Priority data-title={ priority }
+                    ref={ prioritiesRef }
+                    id={ uniqueId }
+                    onClick={ priorityClick }
+                    backgroundColor={ statusColor }
+                >
                     { visibleMenu ? <PriorityDropDown /> : null }
                 </Priority>
                 <Subject>
                     { props.subject }
                 </Subject>
             </Container>
+            <Date date-time={ props.date }>{ props.date }</Date>
 
         </>
     );
