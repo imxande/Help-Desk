@@ -75,7 +75,7 @@ const LoginForm = () =>
 
 	return (
 		<Container>
-			<Form onSubmit={ handleSubmit }>
+			<Form autoComplete="off" role="presentation" onSubmit={ handleSubmit }>
 				<Label htmlFor="email">
 					<Field
 						name="email"
