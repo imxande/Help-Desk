@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	background: #242943;
+	background: #178795;
 	width: 100%;
 	height: 3em;
 	display: flex;
@@ -13,7 +13,6 @@ export const UL = styled.ul`
 `;
 
 export const List = styled.li`
-	// border: 1px solid red;
 	margin-left: 1em;
 
 	&:hover {
@@ -39,7 +38,7 @@ export const Link = styled.a`
 `;
 
 export const Button = styled.button`
-	background: #242943;
+	background: #178795;
 	border: none;
 	color: white;
 	position: relative;
@@ -47,7 +46,7 @@ export const Button = styled.button`
 	&:hover::after {
 		content: attr(data-title);
 		position: absolute;
-		background: #242943;
+		background: #178795;
 		font-size: 16px;
 		padding: 5px;
 		margin-top: 10px;
@@ -58,6 +57,8 @@ export const Button = styled.button`
 
 export const Icon = styled.div`
 	font-size: 25px;
+	transition: 0.5s;
+
 	&:hover {
 		background: rgba(255, 255, 255, 0.5);
 		cursor: pointer;
@@ -71,14 +72,15 @@ export const Text = styled.span`
 `;
 
 export const ProfileContainer = styled.button`
-background: #242943;
+background: #178795;
 border: none;
 color: white;
 position: relative;
+
 &:hover::after {
 	content: attr(data-title);
 	position: absolute;
-	background: #242943;
+	background: #178795;
 	font-size: 16px;
 	padding: 5px;
 	margin-top: 10px;

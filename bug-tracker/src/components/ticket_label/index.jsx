@@ -10,7 +10,7 @@ const TicketLabel = ( props ) =>
     const [ visibleMenu, setVisibleMenu ] = useState( false );
     const prioritiesRef = useRef();
 
-    console.log( props );
+    console.log( "Coming from Ticket Label: ", props );
     const statusColor = setStatus( props.status );
     const priority = props.priority;
 

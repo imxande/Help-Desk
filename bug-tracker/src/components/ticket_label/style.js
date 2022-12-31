@@ -22,7 +22,7 @@ export const Priority = styled.span`
     &:hover::after {
         content: attr(data-title);
         position: absolute;
-        background: #1e272e;
+        background: #178795;
         border-radius: 10%;
         left: 23%;
         color: #fff;
@@ -30,8 +30,9 @@ export const Priority = styled.span`
     }
 `
 
-export const Subject = styled.p`
 
+export const Subject = styled.p`
+    
 `
 
 export const Date = styled.time`

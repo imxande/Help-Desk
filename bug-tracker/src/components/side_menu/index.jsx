@@ -24,32 +24,32 @@ export const SideMenu = () =>
       <MenuContainer>
         <UL>
           <List className={ flexItems ? "flex_items" : null }>
-            <Icon color={ "#483c32" }>
+            <Icon color={ "#fff8f2" }>
               <MdGridView />
             </Icon>
             <Text>HQ</Text>
           </List>
           <List className={ flexItems ? "flex_items" : null }>
-            <Icon color={ "#483c32" }>
+            <Icon color={ "#fff8f2" }>
               <MdOutlineRssFeed />
             </Icon>
             <Text>Feeds</Text>
           </List>
           <List className={ flexItems ? "flex_items" : null }>
-            <Icon color={ "#483c32" }>
+            <Icon color={ "#fff8f2" }>
               <MdViewInAr />
             </Icon>
             <Text>Views</Text>
           </List>
           <List className={ flexItems ? "flex_items" : null }>
-            <Icon color={ "#483c32" }>
+            <Icon color={ "#fff8f2" }>
               <GoCalendar />
             </Icon>
             <Text>Calendar</Text>
           </List>
 
           <List className={ flexItems ? "flex_items" : null }>
-            <Icon color={ "#483c32" }>
+            <Icon color={ "#fff8f2" }>
               <BsTags />
             </Icon>
             <Text>Tags</Text>
